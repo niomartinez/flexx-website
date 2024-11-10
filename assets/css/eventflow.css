@@ -221,7 +221,7 @@ ul {
 .section-title__tagline-box {
   position: relative;
   display: block;
-  margin-bottom: 12px;
+  margin-top: 20px;
 }
 
 .section-title__tagline {
@@ -266,7 +266,7 @@ ul {
   color: var(--flexx-dirtywhite);
   text-transform: capitalize;
   letter-spacing: 1.6px;
-  padding: 17px 30px 17px;
+  padding: 10px 20px 10px;
   background: linear-gradient(90deg, #504f55 0%, #f9ad42 100%);
   border-radius: 30px;
   moz-transition: all .4s ease-in-out;
@@ -1108,7 +1108,7 @@ ul {
   top: 0;
   left: 0;
   width: 100vw;
-  height: 100vh;
+  height: 90vh;
   z-index: 999;
   -webkit-transform: translateX(-100%);
   transform: translateX(-100%);
@@ -1592,7 +1592,7 @@ ul {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  height: 100vh;
+  height: 75vh;
 }
 
 /* Add a dim effect using a pseudo-element */
