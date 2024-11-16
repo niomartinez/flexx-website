@@ -1573,6 +1573,17 @@ ul {
   color: var(--flexx-orange);
 }
 
+.event-one__text {
+  position: relative;
+  z-index: 1;
+  padding: 30px;
+  color: var(--eventflow-white);
+  text-align: center;
+  border-radius: 10px;
+  font-size: large;
+  -webkit-box-shadow: 0 0 30px 0 rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0 30px 0 rgba(0, 0, 0, 0.1);
+}
 
 /*--------------------------------------------------------------
 # Main Slider
@@ -2803,6 +2814,18 @@ ul {
   border-radius: 20px;
 }
 
+.event-one__video-box {
+  position: relative;
+  display: block;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.event-one__video-box video {
+  width: 100%;
+  height: auto;
+  border-radius: 20px;
+}
 /*--------------------------------------------------------------
 # Buy Ticket
 --------------------------------------------------------------*/
@@ -2915,7 +2938,7 @@ ul {
 .team-one {
   position: relative;
   display: block;
-  padding: 120px 0 90px;
+  padding: 50px 0 90px;
   z-index: 1;
 }
 
@@ -5498,7 +5521,7 @@ ul {
 }
 
 .testimonial-one__sub-title {
-  color: rgba(var(--eventflow-white-rgb), .90);
+  color: var(--flexx-dirtywhite);
 }
 
 .testimonial-one__review {
@@ -5523,7 +5546,7 @@ ul {
 .testimonial-one__text {
   font-size: 20px;
   line-height: 30px;
-  color: rgba(var(--eventflow-white-rgb), .90);
+  color: rgba(var(--flexx-dirtywhite-rgb), .90);
   margin-top: 30px;
   margin-bottom: 30px;
 }
