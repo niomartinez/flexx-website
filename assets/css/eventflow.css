@@ -61,7 +61,7 @@ body {
 }
 
 .body-bg-color-1 {
-  background-color: #1e1925;
+  background-color: #171618;
 }
 
 .body-bg-color-2 {
@@ -1599,11 +1599,11 @@ ul {
 
 .main-slider .swiper-slide {
   position: relative;
-  background-image: url('/assets/images/events/FLEXX-CONFERENCE-PHOTOS-JULY/event-44.jpg'); /* Path to your image */
+  background-image: url('/assets/images/events/FLEXX-CONFERENCE-PHOTOS-JULY/event-44.jpg');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  height: 75vh;
+  height: 100vh;
 }
 
 /* Add a dim effect using a pseudo-element */
@@ -2709,6 +2709,7 @@ ul {
 
 .event-one__inner {
   position: relative;
+  background: #050208;
   display: block;
   border: 2px solid rgba(var(--eventflow-bdr-color-rgb), .20);
   border-radius: 20px;
@@ -3067,7 +3068,7 @@ ul {
 .event-direction__inner {
   position: relative;
   display: block;
-  background-color: #0E0A17;
+  background-color: #050208;
   padding: 100px 60px 70px;
   border-radius: 20px;
 }
@@ -4144,10 +4145,11 @@ ul {
   position: relative;
   display: flex;
   align-items: center;
-  justify-content: space-between;
   flex-wrap: wrap;
   border-top: 1px solid rgba(var(--eventflow-bdr-color-rgb), .20);
   padding: 40.5px 0;
+  align-content: center;
+  justify-content: center;
 }
 
 .site-footer__bottom-menu {
