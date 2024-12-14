@@ -1,0 +1,436 @@
+/* Add this class to lock scrolling */
+body.overlay-open {
+  overflow: hidden;
+}
+
+/* Onboarding */
+.onboarding {
+  position: relative;
+  padding: 10.625rem 0 5.625rem;
+  min-height: 100vh;
+  isolation: isolate;
+
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-size: cover;
+    background-position: center;
+    background-image: url(../images/backgrounds/onboarding-bg.jpg);
+    filter: brightness(0.21);
+    z-index: -1;
+  }
+
+  .container {
+    position: relative;
+    max-width: 75.775rem;
+  }
+
+  .onboarding__content {
+    text-align: center;
+  }
+
+  h1 {
+    font-size: 4.6747625rem;
+    line-height: 5.5625rem;
+    margin-bottom: 4.125rem;
+    letter-spacing: -0.04rem;
+    color: var(--flexx-dirtywhite);
+    animation-delay: 0.5s;
+  }
+
+  h2 {
+    color: var(--flexx-orange);
+    font-size: 3.17585rem;
+    margin-bottom: 3.125rem;
+    animation-delay: 0.7s;
+  }
+
+  p {
+    color: var(--flexx-dirtywhite);
+    font-size: 1.5308rem;
+    line-height: 2.125rem;
+    max-width: 30.1666875rem;
+    margin: 0 auto;
+    animation-delay: 0.9s;
+  }
+
+  .onboarding__button__next {
+    display: flex;
+    margin: 6.25rem auto 0 auto;
+    align-items: center;
+    justify-content: center;
+    text-transform: uppercase;
+    padding: 0.25rem;
+    color: var(--flexx-black-text);
+    background-color: var(--flexx-orange);
+    font-size: 1.16666875rem;
+    height: 3.488025rem;
+    width: 13.8663125rem;
+    font-weight: 700;
+    border: 0;
+  }
+}
+
+/* Onboarding Modal */
+.onboarding-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  color: white;
+  transform: translateY(100%);
+  z-index: 1000;
+  overflow: hidden;
+
+  .onboarding-modal__bg {
+    position: absolute;
+    inset: 0;
+    background-size: cover;
+    background-position: center;
+    filter: brightness(0.21);
+    z-index: -1;
+
+    &.--default {
+      background-image: url(../images/backgrounds/services-bg.jpg);
+    }
+
+    &.--phase-1 {
+      opacity: 0;
+      background-image: url(../images/backgrounds/phase-1-bg.jpg);
+    }
+
+    &.--phase-2 {
+      opacity: 0;
+      background-image: url(../images/backgrounds/phase-2-bg.jpg);
+    }
+
+    &.--phase-3 {
+      opacity: 0;
+      background-image: url(../images/backgrounds/phase-3-bg.jpg);
+    }
+  }
+
+  .onboarding-modal__container {
+    height: 100%;
+    position: relative;
+    overflow-y: auto;
+  }
+
+  .onboarding-modal__content {
+    padding-top: 6rem;
+    padding-left: 0.9375rem;
+    padding-right: 0.9375rem;
+  }
+
+  .onboarding-modal__close-button__wrapper {
+    position: absolute;
+    top: 3rem;
+    left: 0.9375rem;
+  }
+
+  .onboarding-modal__close-button {
+    position: relative;
+    background-color: transparent;
+    border: 0;
+
+    @media (min-width: 768px) {
+      left: 2rem;
+    }
+  }
+}
+
+/* Services */
+.services {
+  .services__container {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    align-items: center;
+    padding: 5rem 0;
+  }
+
+  .services__button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-transform: uppercase;
+    padding: 0.25rem;
+    color: var(--flexx-black-text);
+    background-color: var(--flexx-orange);
+    font-size: 2.66663125rem;
+    height: auto;
+    width: 30.938875rem;
+    font-weight: 700;
+    padding: 0.625rem;
+    line-height: 3.6875rem;
+    border: 0;
+  }
+}
+
+/* Trading */
+.trading-system {
+  opacity: 0;
+  visibility: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  height: 0;
+  overflow: hidden;
+
+  .trading-system__container {
+    padding-bottom: 5rem;
+  }
+
+  .trading-system__heading {
+    text-transform: uppercase;
+    font-size: 4.66666875rem;
+    font-weight: 700;
+    font-style: normal;
+    color: #f4f1ec;
+    font-kerning: none;
+    text-decoration: none;
+    text-align: center;
+  }
+
+  .trading-system__country {
+    font-size: 1.66666875rem;
+    text-transform: uppercase;
+    font-style: italic;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 2rem;
+    padding-top: 2rem;
+    color: #f4f1ec;
+  }
+
+  .trading-system__content {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    padding-top: 3rem;
+
+    @media (min-width: 1024px) {
+      margin: 0 auto;
+      max-width: 58rem;
+    }
+
+    .trading-system__content__row {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+      align-items: center;
+
+      @media (min-width: 1024px) {
+        flex-direction: row;
+      }
+
+      button {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-transform: uppercase;
+        padding: 0.25rem;
+        color: var(--flexx-black-text);
+        background-color: var(--flexx-orange);
+        font-size: 2.66663125rem;
+        height: auto;
+        width: 100%;
+        font-weight: 700;
+        padding: 0.625rem 0;
+        line-height: 3.6875rem;
+        border: 0;
+
+        @media (min-width: 1024px) {
+          width: 27rem;
+        }
+      }
+
+      p {
+        font-size: 1.5308rem;
+        font-weight: 400;
+        font-style: normal;
+        color: var(--flexx-dirtywhite);
+        font-kerning: none;
+        text-decoration: none;
+        text-align: center;
+      }
+    }
+  }
+}
+
+
+/* Phase */
+.phase-1,
+.phase-2,
+.phase-3 {
+  opacity: 0;
+  visibility: hidden;
+  max-width: 1200px;
+  margin: 0 auto;
+  height: 0;
+  overflow: hidden;
+
+  .phase__container {
+    padding-bottom: 5rem;
+  }
+
+  .phase__wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+
+    @media (min-width: 768px) {
+      flex-direction: row;
+    }
+  }
+
+  .phase-3__wrapper {
+    @media (min-width: 768px) {
+      gap: 8rem;
+    }
+  }
+
+  * {
+    color: var(--flexx-dirtywhite);
+  }
+
+  .phase-1__heading,
+  .phase-2__heading,
+  .phase-3__heading {
+    font-size: 4.66666875rem;
+    text-transform: uppercase;
+    font-weight: 700;
+    flex-shrink: 0;
+    white-space: nowrap;
+    overflow: hidden;
+
+    @media (max-width: 767px) {
+      transform: rotate(0deg) !important;
+    }
+
+    @media (min-width: 768px) {
+      font-size: 8.3333125rem;
+      writing-mode: vertical-rl;
+      text-orientation: mixed;
+      transform: rotate(180deg);
+    }
+  }
+
+  .phase-2__heading {
+    order: 1;
+
+    @media (min-width: 768px) {
+      order: 2;
+      writing-mode: vertical-lr;
+      transform: rotate(0deg);
+    }
+  }
+
+  .phase-1__content,
+  .phase-2__content {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+  }
+
+  .phase-2__content {
+    order: 2;
+
+    @media (min-width: 768px) {
+      order: 1;
+    }
+  }
+
+  .phase-1__content__row,
+  .phase-2__content__row {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+
+    h3 {
+      font-size: 1.5308rem;
+      text-transform: uppercase;
+      flex-shrink: 0;
+      text-align: center;
+    }
+
+    p {
+      font-size: 1.5308rem;
+      text-align: center;
+    }
+
+    @media (min-width: 768px) {
+      flex-direction: row;
+    }
+  }
+
+  .phase-3__main-heading {
+    font-weight: 700;
+    font-style: normal;
+    text-transform: uppercase;
+    color: var(--flexx-orange);
+    font-size: 3.833331rem;
+    line-height: 8.125rem;
+    text-align: center;
+
+    @media (min-width: 768px) {
+      font-size: 5.83333125rem;
+    }
+  }
+
+  .phase-3__sub-heading {
+    font-size: 2.1180375rem;
+    font-weight: 400;
+    font-style: normal;
+    font-kerning: none;
+    text-decoration: none;
+    text-align: center;
+    letter-spacing: 0.414em;
+    text-transform: uppercase;
+  }
+
+  .phase-3__image-wrapper {
+    width: 100%;
+    height: 8rem;
+    margin-left: auto;
+    margin-right: auto;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    @media (min-width: 768px) {
+      width: 35rem;
+      height: 10rem;
+    }
+  }
+
+  .phase__button-wrapper {
+    flex-shrink: 0;
+    justify-content: end;
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+    padding-bottom: 3rem;
+  }
+
+  .phase__button {
+    padding: 0.25rem;
+    color: var(--flexx-black-text);
+    background-color: var(--flexx-orange);
+    font-weight: 700;
+    border: 0;
+    width: 7rem;
+    height: 3rem;
+    text-transform: uppercase;
+  }
+}
