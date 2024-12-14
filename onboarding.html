@@ -1,0 +1,693 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FLEXX: Your Financial growth partner</title>
+    <!-- favicons Icons -->
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="assets/images/favicons/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="/assets/images/logos/small-white.PNG"
+    />
+    <link rel="manifest" href="assets/images/favicons/site.webmanifest" />
+
+    <!-- fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
+
+    <link
+      rel="stylesheet"
+      href="assets/vendors/bootstrap/css/bootstrap.min.css"
+    />
+    <link rel="stylesheet" href="assets/vendors/animate/animate.min.css" />
+    <link rel="stylesheet" href="assets/vendors/animate/custom-animate.css" />
+    <link rel="stylesheet" href="assets/vendors/fontawesome/css/all.min.css" />
+    <link rel="stylesheet" href="assets/vendors/jarallax/jarallax.css" />
+    <link
+      rel="stylesheet"
+      href="assets/vendors/jquery-magnific-popup/jquery.magnific-popup.css"
+    />
+    <link rel="stylesheet" href="assets/vendors/odometer/odometer.min.css" />
+    <link rel="stylesheet" href="assets/vendors/swiper/swiper.min.css" />
+    <link rel="stylesheet" href="assets/vendors/eventflow-icons/style.css" />
+    <link
+      rel="stylesheet"
+      href="assets/vendors/owl-carousel/owl.carousel.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="assets/vendors/owl-carousel/owl.theme.default.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="assets/vendors/bootstrap-select/css/bootstrap-select.min.css"
+    />
+    <link rel="stylesheet" href="assets/vendors/nice-select/nice-select.css" />
+    <link rel="stylesheet" href="assets/vendors/jquery-ui/jquery-ui.css" />
+
+    <!-- template styles -->
+    <link rel="stylesheet" href="assets/css/eventflow.css" />
+    <link rel="stylesheet" href="assets/css/eventflow-responsive.css" />
+
+    <link rel="stylesheet" href="assets/css/onboarding.css" />
+  </head>
+
+  <body class="body-bg-color-1">
+    <div class="preloader">
+      <div class="preloader__image"></div>
+    </div>
+    <!-- /.preloader -->
+
+    <!-- Start sidebar widget content -->
+    <div class="xs-sidebar-group info-group info-sidebar">
+      <div class="xs-overlay xs-bg-black"></div>
+      <div class="xs-sidebar-widget">
+        <div class="sidebar-widget-container">
+          <div class="widget-heading">
+            <a href="#" class="close-side-widget">X</a>
+          </div>
+          <div class="sidebar-textwidget">
+            <div class="sidebar-info-contents">
+              <div class="content-inner">
+                <div class="logo">
+                  <a href="index.html"
+                    ><img src="assets/images/resources/logo-1.png" alt=""
+                  /></a>
+                </div>
+                <div class="content-box">
+                  <h4>About Us</h4>
+                  <p>
+                    Lorem ipsum dolor sit amet, consectetur elit, sed do eiusmod
+                    tempor incididunt ut labore et magna aliqua.
+                  </p>
+                </div>
+                <div class="form-inner">
+                  <h4>Get a free quote</h4>
+                  <form
+                    action="assets/inc/sendemail.php"
+                    class="contact-form-validated"
+                    novalidate="novalidate"
+                  >
+                    <div class="form-group">
+                      <input
+                        type="text"
+                        name="name"
+                        placeholder="Name"
+                        required=""
+                      />
+                    </div>
+                    <div class="form-group">
+                      <input
+                        type="email"
+                        name="email"
+                        placeholder="Email"
+                        required=""
+                      />
+                    </div>
+                    <div class="form-group">
+                      <textarea
+                        name="message"
+                        placeholder="Message..."
+                      ></textarea>
+                    </div>
+                    <div class="form-group message-btn">
+                      <button type="submit" class="thm-btn form-inner__btn">
+                        Submit Now
+                      </button>
+                    </div>
+                  </form>
+                  <div class="result"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- End sidebar widget content -->
+    <div class="page-wrapper">
+      <header class="main-header">
+        <nav class="main-menu">
+          <div class="main-menu__wrapper">
+            <div class="main-menu__wrapper-inner">
+              <div class="main-menu__left">
+                <div class="main-menu__logo">
+                  <a href="index.html"
+                    ><img
+                      src="assets/images/logos/white-cropped-resized.png"
+                      alt=""
+                  /></a>
+                </div>
+              </div>
+              <div class="main-menu__main-menu-box">
+                <a href="#" class="mobile-nav__toggler"
+                  ><i class="fa fa-bars"></i
+                ></a>
+                <ul class="main-menu__list one-page-scroll-menu">
+                  <li class="scrollToLink">
+                    <a href="#home">Home</a>
+                  </li>
+                  <li class="dropdown scrollToLink">
+                    <a href="#about-us">About Us</a>
+                    <ul>
+                      <li><a href="#team">Team</a></li>
+                    </ul>
+                  </li>
+                  <li class="scrollToLink">
+                    <a href="#testimonials">Testimonials</a>
+                    <!-- <ul>
+                                        <li><a href="#stories">Stories</a></li>
+                                    </ul> -->
+                  </li>
+                  <li class="scrollToLink">
+                    <a href="#team">Events</a>
+                    <!-- <ul>
+                                        <li><a href="#gallery">Gallery</a></li>
+                                    </ul> -->
+                  </li>
+                </ul>
+              </div>
+              <div class="main-menu__right">
+                <div class="main-menu__btn-box">
+                  <a href="onboarding.html" class="main-menu__btn thm-btn"
+                    >Onboarding<span class="icon-arrow-right"></span
+                  ></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </nav>
+      </header>
+
+      <div class="stricky-header stricked-menu main-menu">
+        <div class="sticky-header__content"></div>
+        <!-- /.sticky-header__content -->
+      </div>
+      <!-- /.stricky-header -->
+
+      <!-- Onboarding -->
+      <section class="onboarding-wrapper">
+        <!-- Onboarding Content -->
+        <section class="onboarding">
+          <div class="container">
+            <div class="onboarding__content">
+              <h1 class="animated fadeInUp">WELCOME TO TEAM FLEXX</h1>
+              <h2 class="animated fadeInUp">
+                Let’s get you started. Let’ get you ONBOARD. Get get aww
+              </h2>
+              <p class="animated fadeInUp">
+                Description/Explanation ng onboarding para mas maintindihan ng
+                mga new members natin.
+              </p>
+              <button class="onboarding__button__next">NEXT</button>
+            </div>
+          </div>
+        </section>
+
+        <!-- Onboarding Modal -->
+        <div class="onboarding-modal">
+          <!-- Onboarding Background Image -->
+          <div class="onboarding-modal__bg --default"></div>
+          <div class="onboarding-modal__bg --phase-1"></div>
+          <div class="onboarding-modal__bg --phase-2"></div>
+          <div class="onboarding-modal__bg --phase-3"></div>
+
+          <div class="onboarding-modal__container">
+            <!-- Close Button -->
+            <div class="onboarding-modal__close-button__wrapper">
+              <button
+                class="onboarding-modal__close-button"
+                aria-label="close button"
+              >
+                <svg
+                  height="32"
+                  width="32"
+                  version="1.1"
+                  viewBox="0 0 512 512"
+                  fill="white"
+                  xml:space="preserve"
+                  xmlns="http://www.w3.org/2000/svg"
+                  xmlns:xlink="http://www.w3.org/1999/xlink"
+                >
+                  <path
+                    d="M443.6,387.1L312.4,255.4l131.5-130c5.4-5.4,5.4-14.2,0-19.6l-37.4-37.6c-2.6-2.6-6.1-4-9.8-4c-3.7,0-7.2,1.5-9.8,4  L256,197.8L124.9,68.3c-2.6-2.6-6.1-4-9.8-4c-3.7,0-7.2,1.5-9.8,4L68,105.9c-5.4,5.4-5.4,14.2,0,19.6l131.5,130L68.4,387.1  c-2.6,2.6-4.1,6.1-4.1,9.8c0,3.7,1.4,7.2,4.1,9.8l37.4,37.6c2.7,2.7,6.2,4.1,9.8,4.1c3.5,0,7.1-1.3,9.8-4.1L256,313.1l130.7,131.1  c2.7,2.7,6.2,4.1,9.8,4.1c3.5,0,7.1-1.3,9.8-4.1l37.4-37.6c2.6-2.6,4.1-6.1,4.1-9.8C447.7,393.2,446.2,389.7,443.6,387.1z"
+                  />
+                </svg>
+              </button>
+            </div>
+
+
+            <div class="onboarding-modal__content">
+              <!-- Services -->
+              <section class="services">
+                <div class="services__container">
+                  <button class="services__button navigate__trading-system">
+                    Trading System
+                  </button>
+                  <button class="services__button">Sage Master Guildeline</button>
+                  <button class="services__button">Affiliate System</button>
+                </div>
+              </section>
+
+              <!-- Trading System -->
+              <section class="trading-system">
+                <div class="trading-system__container">
+                  <h2 class="trading-system__heading trading-system__fade-up">
+                    Trading System
+                  </h2>
+                  <div class="trading-system__country trading-system__fade-up">
+                    <p>PHILIPPINES</p>
+                    <p>JAPAN</p>
+                    <p>UAE</p>
+                    <p>QATAR</p>
+                    <p>CANADA</p>
+                    <p>USA</p>
+                    <p>NEW ZEALAND</p>
+                    <p>AUSTRAILIA</p>
+                  </div>
+
+                  <div class="trading-system__content">
+                    <div class="trading-system__content__row">
+                      <button type="button" class="navigate__phase-1">
+                        Phase 1
+                      </button>
+                      <p>
+                        Description/Explanation ng onboarding para mas maintindihan
+                        ng mga new members natin.
+                      </p>
+                    </div>
+                    <div class="trading-system__content__row">
+                      <button type="button" class="navigate__phase-2">
+                        Phase 2
+                      </button>
+                      <p>
+                        Description/Explanation ng onboarding para mas maintindihan
+                        ng mga new members natin.
+                      </p>
+                    </div>
+                    <div class="trading-system__content__row">
+                      <button type="button" class="navigate__phase-3">
+                        Phase 3
+                      </button>
+                      <p>
+                        Description/Explanation ng onboarding para mas maintindihan
+                        ng mga new members natin.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </section>
+
+              <!-- Phase 1 -->
+              <section class="phase-1">
+                <div class="phase__container">
+                  <div class="phase__button-wrapper">
+                    <button class="phase__button navigate__trading-system">
+                      Back
+                    </button>
+                    <button class="phase__button navigate__phase-2">Phase 2</button>
+                  </div>
+                  <div class="phase__wrapper">
+                    <h2 class="phase-1__heading">Phase 1</h2>
+                    <div class="phase-1__content">
+                      <div class="phase-1__content__row">
+                        <h3>Step 1</h3>
+                        <p>
+                          Description/Explanation ng onboarding para mas
+                          maintindihan ng mga new members natin.
+                        </p>
+                      </div>
+                      <div class="phase-1__content__row">
+                        <h3>Step 2</h3>
+                        <p>
+                          Description/Explanation ng onboarding para mas
+                          maintindihan ng mga new members natin.
+                        </p>
+                      </div>
+                      <div class="phase-1__content__row">
+                        <h3>Step 3</h3>
+                        <p>
+                          Description/Explanation ng onboarding para mas
+                          maintindihan ng mga new members natin.
+                        </p>
+                      </div>
+                      <div class="phase-1__content__row">
+                        <h3>Step 4</h3>
+                        <p>
+                          Description/Explanation ng onboarding para mas
+                          maintindihan ng mga new members natin.
+                        </p>
+                      </div>
+                      <div class="phase-1__content__row">
+                        <h3>Step 5</h3>
+                        <p>
+                          Description/Explanation ng onboarding para mas
+                          maintindihan ng mga new members natin.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </section>
+
+              <!-- Phase 2 -->
+              <section class="phase-2">
+                <div class="phase__container">
+                  <div class="phase__button-wrapper">
+                    <button class="phase__button navigate__phase-1">Back</button>
+                    <button class="phase__button navigate__phase-3">Phase 3</button>
+                  </div>
+                  <div class="phase__wrapper">
+                    <div class="phase-2__content">
+                      <div class="phase-2__content__row">
+                        <h3>Step 1</h3>
+                        <p>
+                          Description/Explanation ng onboarding para mas
+                          maintindihan ng mga new members natin.
+                        </p>
+                      </div>
+                      <div class="phase-2__content__row">
+                        <h3>Step 2</h3>
+                        <p>
+                          Description/Explanation ng onboarding para mas
+                          maintindihan ng mga new members natin.
+                        </p>
+                      </div>
+                      <div class="phase-2__content__row">
+                        <h3>Step 3</h3>
+                        <p>
+                          Description/Explanation ng onboarding para mas
+                          maintindihan ng mga new members natin.
+                        </p>
+                      </div>
+                      <div class="phase-2__content__row">
+                        <h3>Step 4</h3>
+                        <p>
+                          Description/Explanation ng onboarding para mas
+                          maintindihan ng mga new members natin.
+                        </p>
+                      </div>
+                      <div class="phase-2__content__row">
+                        <h3>Step 5</h3>
+                        <p>
+                          Description/Explanation ng onboarding para mas
+                          maintindihan ng mga new members natin.
+                        </p>
+                      </div>
+                    </div>
+                    <h2 class="phase-2__heading">Phase 2</h2>
+                  </div>
+                </div>
+              </section>
+
+              <!-- Phase 3 -->
+              <section class="phase-3">
+                <div class="phase__container">
+                  <div class="phase__button-wrapper">
+                    <button class="phase__button navigate__phase-2">Back</button>
+                  </div>
+                  <div class="phase__wrapper phase-3__wrapper">
+                    <h2 class="phase-3__heading">Phase 3</h2>
+                    <div>
+                      <h3 class="phase-3__main-heading phase-3__fade-up">
+                        WELCOME TO
+                      </h3>
+                      <div class="phase-3__image-wrapper phase-3__fade-up">
+                        <img
+                          src="assets/images/backgrounds/phase-3-img.jpg"
+                          alt="flex logo"
+                        />
+                      </div>
+                      <h4 class="phase-3__sub-heading phase-3__fade-up">Milli</h4>
+                    </div>
+                  </div>
+                </div>
+              </section>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!--Site Footer Start-->
+      <footer class="site-footer">
+        <div class="site-footer__shape-1 float-bob-y">
+          <img src="assets/images/shapes/site-footer-shape-1.png" alt="" />
+        </div>
+        <div class="site-footer__top">
+          <div class="container">
+            <div class="site-footer__top-inner">
+              <div class="site-footer__logo">
+                <a href="index.html"
+                  ><img
+                    src="assets/images/logos/white-cropped-resized.png"
+                    alt=""
+                /></a>
+              </div>
+              <div class="site-footer__social">
+                <a href="#"><i class="icon-facebook"></i></a>
+                <a href="#"><i class="icon-fi"></i></a>
+                <a href="#"><i class="icon-instagram"></i></a>
+                <a href="#"><i class="icon-pinterest"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="site-footer__middle">
+          <div class="container">
+            <div class="site-footer__middle-inner">
+              <div class="row">
+                <div
+                  class="col-xl-3 col-lg-6 col-md-6 wow fadeInUp"
+                  data-wow-delay="100ms"
+                >
+                  <div class="footer-widget__column footer-widget__events">
+                    <div class="footer-widget__title-box">
+                      <h3 class="footer-widget__title">Upcoming Events</h3>
+                    </div>
+                    <ul class="footer-widget__events-list list-unstyled">
+                      <li>
+                        <p>11 April 2024 At 10 Pm In Dhaka</p>
+                        <h5>Ui/ux Designer Meetup</h5>
+                        <a href="event-details.html"
+                          >Get a Ticket <span class="icon-arrow-right"></span
+                        ></a>
+                      </li>
+                      <li>
+                        <p>11 April 2024 At 10 Pm In Dhaka</p>
+                        <h5>Ui/ux Designer Meetup</h5>
+                        <a href="event-details.html"
+                          >Get a Ticket <span class="icon-arrow-right"></span
+                        ></a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+                <div
+                  class="col-xl-3 col-lg-6 col-md-6 wow fadeInUp"
+                  data-wow-delay="200ms"
+                >
+                  <div class="footer-widget__column footer-widget__link">
+                    <div class="footer-widget__title-box">
+                      <h3 class="footer-widget__title">Quick links</h3>
+                    </div>
+                    <ul class="footer-widget__link-list list-unstyled">
+                      <li><a href="about.html">About Us</a></li>
+                      <li><a href="services.html">Service</a></li>
+                      <li><a href="contact.html">Online Ticket</a></li>
+                      <li><a href="blog.html">Blog Post</a></li>
+                      <li><a href="contact.html">Contact Us</a></li>
+                    </ul>
+                  </div>
+                </div>
+                <div
+                  class="col-xl-3 col-lg-6 col-md-6 wow fadeInUp"
+                  data-wow-delay="300ms"
+                >
+                  <div class="footer-widget__column footer-widget__our-company">
+                    <div class="footer-widget__title-box">
+                      <h3 class="footer-widget__title">Our Company</h3>
+                    </div>
+                    <ul class="footer-widget__link-list list-unstyled">
+                      <li><a href="schedule-list-2.html">Jubilee Events</a></li>
+                      <li><a href="about.html">Gala Affairs</a></li>
+                      <li>
+                        <a href="about.html">Inspire and Delight Events</a>
+                      </li>
+                      <li><a href="about.html">Enchanted Gatherings</a></li>
+                      <li><a href="about.html">Eventful Ventures</a></li>
+                    </ul>
+                  </div>
+                </div>
+                <div
+                  class="col-xl-3 col-lg-6 col-md-6 wow fadeInUp"
+                  data-wow-delay="400ms"
+                >
+                  <div class="footer-widget__column footer-widget__contact">
+                    <div class="footer-widget__title-box">
+                      <h3 class="footer-widget__title">Contact</h3>
+                    </div>
+                    <div class="footer-widget__contact-inner">
+                      <ul class="footer-widget__contact-list list-unstyled">
+                        <li>
+                          <div class="icon">
+                            <span class="icon-envelop"></span>
+                          </div>
+                          <div class="text">
+                            <p>
+                              <a href="mailto:nafiz125@gmail.com"
+                                >nafiz125@gmail.com</a
+                              >
+                            </p>
+                          </div>
+                        </li>
+                        <li>
+                          <div class="icon">
+                            <span class="icon-pin"></span>
+                          </div>
+                          <div class="text">
+                            <p>3891 Ranchview Dr. Richardson</p>
+                          </div>
+                        </li>
+                        <li>
+                          <div class="icon">
+                            <span class="icon-call"></span>
+                          </div>
+                          <div class="text">
+                            <p>
+                              <a href="tel:01245789321"
+                                >01245789321, 012457895146</a
+                              >
+                            </p>
+                          </div>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="site-footer__bottom">
+          <div class="container">
+            <div class="site-footer__bottom-inner">
+              <p class="site-footer__bottom-text">
+                © EventFlow 2024 | All Rights Reserved
+              </p>
+              <ul class="list-unstyled site-footer__bottom-menu">
+                <li><a href="about.html">Trams & Condition</a></li>
+                <li><a href="about.html">Privacy Policy</a></li>
+                <li><a href="about.html">Contact Us</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </footer>
+      <!--Site Footer End-->
+    </div>
+    <!-- /.page-wrapper -->
+
+    <div class="mobile-nav__wrapper">
+      <div class="mobile-nav__overlay mobile-nav__toggler"></div>
+      <!-- /.mobile-nav__overlay -->
+      <div class="mobile-nav__content">
+        <span class="mobile-nav__close mobile-nav__toggler"
+          ><i class="fa fa-times"></i
+        ></span>
+
+        <div class="logo-box">
+          <a href="index.html" aria-label="logo image"
+            ><img src="assets/images/resources/logo-1.png" width="150" alt=""
+          /></a>
+        </div>
+        <!-- /.logo-box -->
+        <div class="mobile-nav__container"></div>
+        <!-- /.mobile-nav__container -->
+
+        <ul class="mobile-nav__contact list-unstyled">
+          <li>
+            <i class="fa fa-envelope"></i>
+            <a href="mailto:needhelp@packageName__.com"
+              >needhelp@eventflow.com</a
+            >
+          </li>
+          <li>
+            <i class="fa fa-phone-alt"></i>
+            <a href="tel:666-888-0000">666 888 0000</a>
+          </li>
+        </ul>
+        <!-- /.mobile-nav__contact -->
+        <div class="mobile-nav__top">
+          <div class="mobile-nav__social">
+            <a href="#" class="fab fa-twitter"></a>
+            <a href="#" class="fab fa-facebook-square"></a>
+            <a href="#" class="fab fa-pinterest-p"></a>
+            <a href="#" class="fab fa-instagram"></a>
+          </div>
+          <!-- /.mobile-nav__social -->
+        </div>
+        <!-- /.mobile-nav__top -->
+      </div>
+      <!-- /.mobile-nav__content -->
+    </div>
+    <!-- /.mobile-nav__wrapper -->
+
+    <!-- <div class="search-popup">
+        <div class="search-popup__overlay search-toggler"></div>
+        <div class="search-popup__content">
+            <form action="#">
+                <label for="search" class="sr-only">search here</label>
+                <input type="text" id="search" placeholder="Search Here..." />
+                <button type="submit" aria-label="search submit" class="thm-btn">
+                    <i class="fas fa-search"></i>
+                </button>
+            </form>
+        </div>
+    </div> -->
+    <!-- /.search-popup -->
+
+    <a href="#" data-target="html" class="scroll-to-target scroll-to-top"
+      ><i class="fas fa-arrow-up"></i
+    ></a>
+
+    <script src="assets/vendors/jquery/jquery-3.6.0.min.js"></script>
+    <script src="assets/vendors/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/vendors/jarallax/jarallax.min.js"></script>
+    <script src="assets/vendors/jquery-ajaxchimp/jquery.ajaxchimp.min.js"></script>
+    <script src="assets/vendors/jquery-appear/jquery.appear.min.js"></script>
+    <script src="assets/vendors/jquery-magnific-popup/jquery.magnific-popup.min.js"></script>
+    <script src="assets/vendors/jquery-validate/jquery.validate.min.js"></script>
+    <script src="assets/vendors/odometer/odometer.min.js"></script>
+    <script src="assets/vendors/swiper/swiper.min.js"></script>
+    <script src="assets/vendors/wnumb/wNumb.min.js"></script>
+    <script src="assets/vendors/wow/wow.js"></script>
+    <script src="assets/vendors/isotope/isotope.js"></script>
+    <script src="assets/vendors/owl-carousel/owl.carousel.min.js"></script>
+    <script src="assets/vendors/bootstrap-select/js/bootstrap-select.min.js"></script>
+    <script src="assets/vendors/jquery-ui/jquery-ui.js"></script>
+    <script src="assets/vendors/nice-select/jquery.nice-select.min.js"></script>
+    <script src="assets/vendors/countdown/countdown.min.js"></script>
+    <script src="assets/vendors/marque/marquee.min.js"></script>
+    <script src="assets/vendors/sidebar-content/jquery-sidebar-content.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="assets/js/onboarding.js"></script>
+
+    <!-- template js -->
+    <script src="assets/js/eventflow.js"></script>
+  </body>
+</html>
