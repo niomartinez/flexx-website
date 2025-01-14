@@ -1120,14 +1120,14 @@
           const photoContainer = document.getElementById('photo-container');
     
           // Build the photo cards
-          let photoCardsHTML = '';
-          album.images.forEach(image => {
-            photoCardsHTML += 
-              <div class="photo-card" onclick="viewImage('${image}')">
+        let photoCardsHTML = '';
+        album.images.forEach(image => {
+            photoCardsHTML += `
+            <div class="photo-card" onclick="viewImage('${image}')">
                 <img src="${image}" alt="${albumTitle}" />
-              </div>
-            ;
-          });
+            </div>
+            `;
+        });
     
           photoContainer.innerHTML = photoCardsHTML;
     
