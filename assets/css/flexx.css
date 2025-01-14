@@ -3244,14 +3244,14 @@ ul {
   Album Cards
 **********************************/
 .album-card {
-  width: 300px;        /* or a % if you want it responsive */
+  width: 300px; /* fixed card width */
   background-color: #f5f5f5;
   border-radius: 15px;
   overflow: hidden;
   margin-bottom: 20px;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  /* Keep or remove 'cursor: pointer' depending on how you want the card to behave */
   cursor: pointer;
   transition: transform 0.3s;
 }
@@ -3260,71 +3260,41 @@ ul {
   transform: scale(1.05);
 }
 
+/* Swiper container inside each .album-card */
 .swiper {
-  width: 100%;        /* fill the card’s width (300px) */
-  height: 200px;      /* your desired height */
-  position: relative; /* required for nav buttons to float inside */
+  width: 100%;    /* fill the 300px album-card width */
+  height: 200px;  /* the chosen 'thumbnail' height */
+  position: relative;
 }
 
 .swiper-slide img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: cover; /* so it fills 300×200 fully */
   display: block;
 }
 
-/* Optional: style the nav or pagination if needed */
-.swiper-button-next, .swiper-button-prev {
-  color: #fff;
-  /* or custom styling */
-}
-.swiper-pagination-bullet {
-  background-color: #fff;
-}
-
-
-/*********************************
-  Carousel
-**********************************/
-.carousel {
-  width: 300px;   /* match album-card’s width exactly */
-  height: 200px;  /* your chosen height */
-  overflow: hidden;
-  position: relative;
-  margin: 0;      /* ensure no extra spacing if needed */
-  padding: 0;     /* same reason */
-}
-
-/* The container that slides left and right */
-.carousel-inner {
-  width: 900px;        /* 3 images => 3×300 = 900px total */
-  height: 100%;
-  display: flex;
-  animation: slide 9s infinite;
-  margin: 0;
-  padding: 0;
-}
-
-/* Each image is 300×200, side by side */
-.carousel-inner img {
-  width: 300px;  /* 1/3 of 900px */
-  height: 200px;
-  object-fit: cover;
-  display: block;
-}
-
-
-/*********************************
-  Titles
-**********************************/
+/* Title under the swiper */
 .album-title {
   padding: 10px;
   text-align: center;
   background: #0E0A17;
-  color: var(--flexx-dirtywhite);
+  color: #f5f5f5; /* or var(--flexx-dirtywhite) */
   font-size: 18px;
-  height: 65px;
+  min-height: 50px; /* optional to give some space */
 }
+
+/* Swiper nav and pagination style as you wish */
+.swiper-button-next, .swiper-button-prev {
+  color: #fff;
+}
+.swiper-pagination-bullet {
+  background: #fff;
+}
+
+/*********************************
+  Titles
+**********************************/
 
 .photo-card {
   width: 200px;
