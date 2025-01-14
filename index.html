@@ -1059,7 +1059,7 @@
           fetch('albums.php')
             .then(response => {
               if (!response.ok) {
-                throw new Error(`HTTP error! status: ${response.status}`);
+                throw new Error(HTTP error! status: ${response.status});
               }
               return response.json();
             })
@@ -1074,98 +1074,43 @@
         });
     
         function buildAlbumCards(albums) {
-        const albumView = document.getElementById('album-view');
-        albumView.innerHTML = '';
-
-        albums.forEach(album => {
-            // The album card
+          const albumView = document.getElementById('album-view');
+          albumView.innerHTML = ''; // Clear existing
+    
+          // For each album, create an album card
+          albums.forEach(album => {
+            // Create the main album card container
             const albumCard = document.createElement('div');
             albumCard.className = 'album-card';
-
-            // Swiper container
-            const swiperDiv = document.createElement('div');
-            swiperDiv.className = 'swiper'; // key Swiper class
-
-            // Swiper wrapper
-            const wrapperDiv = document.createElement('div');
-            wrapperDiv.className = 'swiper-wrapper';
-
-            // Use the first 3 images for the album thumbnail carousel
+            // On click, call expandAlbum
+            albumCard.onclick = () => expandAlbum(album.title);
+    
+            // Create the carousel
+            const carouselDiv = document.createElement('div');
+            carouselDiv.className = 'carousel';
+    
+            // Show first 3 images (or fewer if album has < 3)
             const firstThree = album.images.slice(0, 3);
-
             firstThree.forEach(img => {
-            const slideDiv = document.createElement('div');
-            slideDiv.className = 'swiper-slide';
-
-            const imgEl = document.createElement('img');
-            imgEl.src = img;
-            imgEl.alt = album.title;
-
-            slideDiv.appendChild(imgEl);
-            wrapperDiv.appendChild(slideDiv);
+              const imgEl = document.createElement('img');
+              imgEl.src = img;
+              imgEl.alt = album.title;
+              imgEl.className = 'album-thumbnail';
+              carouselDiv.appendChild(imgEl);
             });
-
-            swiperDiv.appendChild(wrapperDiv);
-
-            // Optional: add nav or pagination elements:
-            const nextEl = document.createElement('div');
-            nextEl.className = 'swiper-button-next';
-            swiperDiv.appendChild(nextEl);
-
-            const prevEl = document.createElement('div');
-            prevEl.className = 'swiper-button-prev';
-            swiperDiv.appendChild(prevEl);
-
-            const paginationEl = document.createElement('div');
-            paginationEl.className = 'swiper-pagination';
-            swiperDiv.appendChild(paginationEl);
-
-            // Title
+    
+            // Create the album title
             const albumTitleDiv = document.createElement('div');
             albumTitleDiv.className = 'album-title';
+            // Replace dashes with spaces for user-friendly display
             albumTitleDiv.textContent = album.title.replace(/-/g, ' ');
-
-            // Combine
-            albumCard.appendChild(swiperDiv);
+    
+            // Append
+            albumCard.appendChild(carouselDiv);
             albumCard.appendChild(albumTitleDiv);
             albumView.appendChild(albumCard);
-
-            // On click, expand album
-            albumCard.onclick = () => expandAlbum(album.title);
-        });
-
-        // After building all the album cards,
-        // initialize Swiper for each .swiper you created.
-        initSwipers();
+          });
         }
-
-        function initSwipers() {
-        // Grab all the .swiper containers in album-view
-        document.querySelectorAll('.swiper').forEach((swiperEl) => {
-            new Swiper(swiperEl, {
-            // Optional parameters
-            slidesPerView: 1,
-            loop: true,
-            navigation: {
-                nextEl: swiperEl.querySelector('.swiper-button-next'),
-                prevEl: swiperEl.querySelector('.swiper-button-prev'),
-            },
-            pagination: {
-                el: swiperEl.querySelector('.swiper-pagination'),
-                clickable: true,
-            },
-            autoplay: {
-                delay: 3000,          // 3 seconds
-                disableOnInteraction: false
-            },
-            // e.g. slide effect or fade effect
-            effect: 'slide',
-            speed: 600, // transition speed
-            // etc. (check Swiper docs for more config)
-            });
-        });
-        }
-
     
         function expandAlbum(albumTitle) {
           const album = albumsData.find(a => a.title === albumTitle);
@@ -1177,11 +1122,11 @@
           // Build the photo cards
           let photoCardsHTML = '';
           album.images.forEach(image => {
-            photoCardsHTML += `
+            photoCardsHTML += 
               <div class="photo-card" onclick="viewImage('${image}')">
                 <img src="${image}" alt="${albumTitle}" />
               </div>
-            `;
+            ;
           });
     
           photoContainer.innerHTML = photoCardsHTML;
