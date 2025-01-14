@@ -3244,6 +3244,7 @@ ul {
   Album Cards
 **********************************/
 .album-card {
+  display: flex;
   width: 300px;
   border-radius: 15px;
   overflow: hidden;
@@ -3252,6 +3253,8 @@ ul {
   transition: transform 0.3s;
   background-color: #f5f5f5;
   margin-bottom: 20px;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .album-card:hover {
@@ -3262,31 +3265,34 @@ ul {
   Carousel
 **********************************/
 .carousel {
-  height: 200px;
   position: relative;
   overflow: hidden;
+  width: 100%;    /* or a fixed width if desired */
+  height: 200px;  /* your chosen thumbnail height */
 }
 
-.carousel img {
-  width: 100%;
+.carousel-inner {
+  display: flex;         /* side-by-side images */
+  width: 300%;           /* 3 slides => 300% width */
+  height: 100%;
+  animation: slide 9s infinite; /* The keyframe below */
+}
+
+/* Each image is 1/3rd of the .carousel-inner’s width */
+.carousel-inner img {
+  width: 33.3333%;
   height: 100%;
   object-fit: cover;
-  position: absolute;
-  animation: slide 9s infinite;
-  transition: opacity 0.5s ease-in-out; /* optional fade */
+  display: block;
 }
 
+/* Now we shift .carousel-inner left in 3 steps */
 @keyframes slide {
-  0%, 33% {
-    transform: translateX(0);
-  }
-  34%, 66% {
-    transform: translateX(-100%);
-  }
-  67%, 100% {
-    transform: translateX(-200%);
-  }
+  0%, 33%   { transform: translateX(0); }
+  34%, 66%  { transform: translateX(-100%); }
+  67%, 100% { transform: translateX(-200%); }
 }
+
 
 /*********************************
   Titles
@@ -3297,11 +3303,12 @@ ul {
   background: #0E0A17;
   color: var(--flexx-dirtywhite);
   font-size: 18px;
+  height: 65px;
 }
 
 .photo-card {
   width: 200px;
-  height: 150px;
+  height: 130px;
   border-radius: 15px;
   overflow: hidden;
   position: relative;

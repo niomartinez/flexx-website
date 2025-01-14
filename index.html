@@ -1070,43 +1070,47 @@
         });
     
         function buildAlbumCards(albums) {
-          const albumView = document.getElementById('album-view');
-          albumView.innerHTML = ''; // Clear existing
-    
-          // For each album, create an album card
-          albums.forEach(album => {
-            // Create the main album card container
-            const albumCard = document.createElement('div');
-            albumCard.className = 'album-card';
-            // On click, call expandAlbum
-            albumCard.onclick = () => expandAlbum(album.title);
-    
-            // Create the carousel
-            const carouselDiv = document.createElement('div');
-            carouselDiv.className = 'carousel';
-    
-            // Show first 3 images (or fewer if album has < 3)
-            const firstThree = album.images.slice(0, 3);
-            firstThree.forEach(img => {
-              const imgEl = document.createElement('img');
-              imgEl.src = img;
-              imgEl.alt = album.title;
-              imgEl.className = 'album-thumbnail';
-              carouselDiv.appendChild(imgEl);
+            const albumView = document.getElementById('album-view');
+            albumView.innerHTML = '';
+
+            albums.forEach(album => {
+                const albumCard = document.createElement('div');
+                albumCard.className = 'album-card';
+                albumCard.onclick = () => expandAlbum(album.title);
+
+                const carouselDiv = document.createElement('div');
+                carouselDiv.className = 'carousel';
+
+                // The sliding container
+                const carouselInner = document.createElement('div');
+                carouselInner.className = 'carousel-inner';
+
+                // Take first 3 images for the album's thumbnail carousel
+                const firstThree = album.images.slice(0, 3);
+
+                firstThree.forEach(img => {
+                const imgEl = document.createElement('img');
+                imgEl.src = img;
+                imgEl.alt = album.title;
+                imgEl.className = 'album-thumbnail';
+                carouselInner.appendChild(imgEl);
+                });
+
+                // Insert .carousel-inner into .carousel
+                carouselDiv.appendChild(carouselInner);
+
+                // Title
+                const albumTitleDiv = document.createElement('div');
+                albumTitleDiv.className = 'album-title';
+                albumTitleDiv.textContent = album.title.replace(/-/g, ' ');
+
+                // Append
+                albumCard.appendChild(carouselDiv);
+                albumCard.appendChild(albumTitleDiv);
+                albumView.appendChild(albumCard);
             });
-    
-            // Create the album title
-            const albumTitleDiv = document.createElement('div');
-            albumTitleDiv.className = 'album-title';
-            // Replace dashes with spaces for user-friendly display
-            albumTitleDiv.textContent = album.title.replace(/-/g, ' ');
-    
-            // Append
-            albumCard.appendChild(carouselDiv);
-            albumCard.appendChild(albumTitleDiv);
-            albumView.appendChild(albumCard);
-          });
         }
+
     
         function expandAlbum(albumTitle) {
           const album = albumsData.find(a => a.title === albumTitle);
