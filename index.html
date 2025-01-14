@@ -37,8 +37,8 @@
 
 
     <!-- template styles -->
-    <link rel="stylesheet" href="assets/css/eventflow.css" />
-    <link rel="stylesheet" href="assets/css/eventflow-responsive.css" />
+    <link rel="stylesheet" href="assets/css/flexx-responsive.css" />
+    <link rel="stylesheet" href="assets/css/flexx.css" />
 </head>
 
 <body class="body-bg-color-1">
@@ -167,7 +167,7 @@
                                         <ul class="list-unstyled main-slider__address">
                                         </ul>
                                         <div class="main-slider__btn-box">
-                                            <a href="#" class="main-slider__btn thm-btn">Get Started
+                                            <a href="/onboarding.html" class="main-slider__btn thm-btn">Get Started
                                                 <span class="icon-arrow-right"></span> 
                                             </a>
                                         </div>
@@ -1072,7 +1072,6 @@
 
     <a href="#" data-target="html" class="scroll-to-target scroll-to-top"><i class="fas fa-arrow-up"></i></a>
 
-
     <script src="assets/vendors/jquery/jquery-3.6.0.min.js"></script>
     <script src="assets/vendors/bootstrap/js/bootstrap.bundle.min.js"></script>
     <script src="assets/vendors/jarallax/jarallax.min.js"></script>
@@ -1092,133 +1091,73 @@
     <script src="assets/vendors/countdown/countdown.min.js"></script>
     <script src="assets/vendors/marque/marquee.min.js"></script>
     <script src="assets/vendors/sidebar-content/jquery-sidebar-content.js"></script>
-    <script>
-        document.addEventListener("DOMContentLoaded", function() {
-          const container = document.querySelector(".rellax-container");
-          const barCount = 15; // Increase for more bars
-          const rellaxSpeedRange = [-2, 2]; // Bar speeds between -2 and 2
-      
-          for (let i = 0; i < barCount; i++) {
-            // Create bar div
-            const bar = document.createElement("div");
-            bar.classList.add("bar");
-      
-            // Random color: red or green
-            const isRed = Math.random() < 0.5;
-            bar.style.backgroundColor = isRed ? "#f44336" : "#4caf50";
-      
-            // Random height (e.g. 100-400px)
-            const height = Math.floor(Math.random() * 300) + 100;
-            bar.style.height = height + "px";
-      
-            // Random rotation (e.g. -45deg to 45deg)
-            const angle = (Math.random() * 90) - 45;
-            bar.style.transform = `rotate(${angle}deg)`;
-      
-            // Random position within viewport
-            const topPos = Math.floor(Math.random() * 100);
-            const leftPos = Math.floor(Math.random() * 100);
-            bar.style.top = topPos + "vh";
-            bar.style.left = leftPos + "vw";
-      
-            // Random parallax speed
-            const speed = (Math.random() * (rellaxSpeedRange[1] - rellaxSpeedRange[0])) + rellaxSpeedRange[0];
-            // e.g.  -2.0 <= speed < 2.0
-            bar.setAttribute("data-rellax-speed", speed.toFixed(1));
-      
-            // Append bar to container
-            container.appendChild(bar);
-          }
-      
-          // Initialize Rellax on the .bar elements
-          new Rellax(".bar");
-        });
-      </script>
-      
-    <script>
-        document.addEventListener("DOMContentLoaded", () => {
-            const video = document.querySelector('.event-one__video-box video');
-            
-            const observer = new IntersectionObserver(entries => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        video.play();
-                    } else {
-                        video.pause();
-                    }
-                });
-            }, {
-                threshold: 0.5 // Play when at least 50% of the video is visible
-            });
-            
-            observer.observe(video);
-        });
-        const albums = {
-            event1: [
-                'assets/images/gallery/gallery-1-1.jpg',
-                'assets/images/gallery/gallery-1-2.jpg',
-                'assets/images/gallery/gallery-1-3.jpg'
-            ],
-            event2: [
-                'assets/images/gallery/gallery-1-4.jpg',
-                'assets/images/gallery/gallery-1-5.jpg',
-                'assets/images/gallery/gallery-1-6.jpg'
-            ]
-            };
-
-            function expandAlbum(albumName) {
-            const expandedView = document.getElementById('expanded-view');
-            const photoContainer = document.getElementById('photo-container');
-
-            // Generate photo cards for the selected album
-            let photoCards = '';
-            albums[albumName].forEach((image) => {
-                photoCards += `
-                <div class="photo-card" onclick="viewImage('${image}')">
-                    <img src="${image}" alt="${albumName}" />
-                </div>
-                `;
-            });
-
-            // Inject photo cards into the container
-            photoContainer.innerHTML = photoCards;
-
-            // Show expanded view, hide album view
-            expandedView.style.display = 'flex';
-            document.getElementById('album-view').style.display = 'none';
-            }
-
-            function closeExpandedView() {
-            // Hide expanded view
-            document.getElementById('expanded-view').style.display = 'none';
-            // Show album view
-            document.getElementById('album-view').style.display = 'flex';
-
-            // Clear out the photo container if desired
-            document.getElementById('photo-container').innerHTML = '';
-            }
-
-            function viewImage(imageSrc) {
-            const modal = document.getElementById('image-modal');
-            const modalImage = document.getElementById('modal-image');
-
-            modalImage.src = imageSrc;
-            modal.style.display = 'flex';
-            // Disable body scroll behind the modal
-            document.body.style.overflow = 'hidden';
-            }
-
-            function closeModal() {
-            const modal = document.getElementById('image-modal');
-            modal.style.display = 'none';
-            // Re-enable body scroll
-            document.body.style.overflow = 'auto';
-            }
-
-
-    </script>
     <!-- template js -->
-    <script src="assets/js/eventflow.js"></script>
+     <script>
+        const albums = {
+      event1: [
+          'assets/images/gallery/gallery-1-1.jpg',
+          'assets/images/gallery/gallery-1-2.jpg',
+          'assets/images/gallery/gallery-1-3.jpg'
+      ],
+      event2: [
+          'assets/images/gallery/gallery-1-4.jpg',
+          'assets/images/gallery/gallery-1-5.jpg',
+          'assets/images/gallery/gallery-1-6.jpg'
+      ]
+      };
+
+    function expandAlbum(albumName) {
+    const expandedView = document.getElementById('expanded-view');
+    const photoContainer = document.getElementById('photo-container');
+
+      // Generate photo cards for the selected album
+      let photoCards = '';
+      albums[albumName].forEach((image) => {
+          photoCards += `
+          <div class="photo-card" onclick="viewImage('${image}')">
+              <img src="${image}" alt="${albumName}" />
+          </div>
+          `;
+      });
+
+      // Inject photo cards into the container
+      photoContainer.innerHTML = photoCards;
+
+      // Show expanded view, hide album view
+      expandedView.style.display = 'flex';
+      document.getElementById('album-view').style.display = 'none';
+      }
+
+      function closeExpandedView() {
+      // Hide expanded view
+      document.getElementById('expanded-view').style.display = 'none';
+      // Show album view
+      document.getElementById('album-view').style.display = 'flex';
+
+      // Clear out the photo container if desired
+      document.getElementById('photo-container').innerHTML = '';
+      }
+
+      function viewImage(imageSrc) {
+      const modal = document.getElementById('image-modal');
+      const modalImage = document.getElementById('modal-image');
+
+      modalImage.src = imageSrc;
+      modal.style.display = 'flex';
+      // Disable body scroll behind the modal
+      document.body.style.overflow = 'hidden';
+      }
+
+      function closeModal() {
+      const modal = document.getElementById('image-modal');
+      modal.style.display = 'none';
+      // Re-enable body scroll
+      document.body.style.overflow = 'auto';
+      }
+
+
+     </script>
+    <script src="assets/js/flexx.js"></script>
 </body>
 
 </html>

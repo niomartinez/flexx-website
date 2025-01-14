@@ -489,11 +489,64 @@
       }
     });
   }
+  
+  document.addEventListener("DOMContentLoaded", function() {
+    const container = document.querySelector(".rellax-container");
+    const barCount = 15; // Increase for more bars
+    const rellaxSpeedRange = [-2, 2]; // Bar speeds between -2 and 2
 
+    for (let i = 0; i < barCount; i++) {
+      // Create bar div
+      const bar = document.createElement("div");
+      bar.classList.add("bar");
 
+      // Random color: red or green
+      const isRed = Math.random() < 0.5;
+      bar.style.backgroundColor = isRed ? "#f44336" : "#4caf50";
 
+      // Random height (e.g. 100-400px)
+      const height = Math.floor(Math.random() * 300) + 100;
+      bar.style.height = height + "px";
 
+      // Random rotation (e.g. -45deg to 45deg)
+      const angle = (Math.random() * 90) - 45;
+      bar.style.transform = `rotate(${angle}deg)`;
 
+      // Random position within viewport
+      const topPos = Math.floor(Math.random() * 100);
+      const leftPos = Math.floor(Math.random() * 100);
+      bar.style.top = topPos + "vh";
+      bar.style.left = leftPos + "vw";
+
+      // Random parallax speed
+      const speed = (Math.random() * (rellaxSpeedRange[1] - rellaxSpeedRange[0])) + rellaxSpeedRange[0];
+      // e.g.  -2.0 <= speed < 2.0
+      bar.setAttribute("data-rellax-speed", speed.toFixed(1));
+
+      // Append bar to container
+      container.appendChild(bar);
+    }
+
+    // Initialize Rellax on the .bar elements
+    new Rellax(".bar");
+  });
+  document.addEventListener("DOMContentLoaded", () => {
+      const video = document.querySelector('.event-one__video-box video');
+      
+      const observer = new IntersectionObserver(entries => {
+          entries.forEach(entry => {
+              if (entry.isIntersecting) {
+                  video.play();
+              } else {
+                  video.pause();
+              }
+          });
+      }, {
+          threshold: 0.5 // Play when at least 50% of the video is visible
+      });
+      
+      observer.observe(video);
+  });
 
   // ===Portfolio===
   function projectMasonaryLayout() {
@@ -536,13 +589,6 @@
       });
     }
   }
-
-
-
-
-
-
-
 
   function SmoothMenuScroll() {
     var anchor = $(".scrollToLink");
