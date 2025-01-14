@@ -3220,83 +3220,93 @@ ul {
   /*--------------------------------------------------------------
   # Gallery One
   --------------------------------------------------------------*/
-  /*********************************
-  Album & Expanded View Layout
+ /*********************************
+   GALLERY & ALBUM CARDS
 **********************************/
-.album-view, .expanded-view {
+.album-view {
   display: flex;
   flex-wrap: wrap;
   gap: 15px;
   justify-content: center;
-  position: relative;
-  margin-bottom: 30px; /* optional to add spacing at bottom */
+  margin-bottom: 30px; 
+  /* remove position: relative if not needed */
 }
 
-.photo-container {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 15px;
-  justify-content: center;
-  width: 100%;
-}
-
-/*********************************
-  Album Cards
-**********************************/
 .album-card {
-  width: 300px; /* fixed card width */
+  width: 300px;              /* fixed card width */
   background-color: #f5f5f5;
   border-radius: 15px;
   overflow: hidden;
   margin-bottom: 20px;
   display: flex;
   flex-direction: column;
-  height: 200px;
-  /* Keep or remove 'cursor: pointer' depending on how you want the card to behave */
   cursor: pointer;
   transition: transform 0.3s;
 }
-
 .album-card:hover {
   transform: scale(1.05);
 }
 
-/* Swiper container inside each .album-card */
+/*********************************
+   SWIPER STYLES
+**********************************/
 .swiper {
-  width: 100%;    /* fill the 300px album-card width */
-  height: 200px;  /* the chosen 'thumbnail' height */
+  /* The top area of the card (thumbnail carousel) */
+  width: 300px;    /* match album-card width */
+  height: 200px;   /* the old “card size” look */
   position: relative;
+  overflow: hidden;
 }
 
+/* Each slide just fills the .swiper area */
+.swiper-slide {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* The images fill 300×200 fully */
 .swiper-slide img {
   width: 100%;
   height: 100%;
-  object-fit: cover; /* so it fills 300×200 fully */
+  object-fit: cover;
   display: block;
 }
 
-/* Title under the swiper */
-.album-title {
-  padding: 10px;
-  text-align: center;
-  background: #0E0A17;
-  color: #f5f5f5; /* or var(--flexx-dirtywhite) */
-  font-size: 18px;
-  min-height: 50px; /* optional to give some space */
-}
-
-/* Swiper nav and pagination style as you wish */
-.swiper-button-next, .swiper-button-prev {
-  color: #fff;
+/* OPTIONAL: style your nav & pagination */
+.swiper-button-next,
+.swiper-button-prev {
+  color: #fff; /* or your brand color */
 }
 .swiper-pagination-bullet {
   background: #fff;
 }
 
 /*********************************
-  Titles
+   ALBUM TITLE
 **********************************/
+.album-title {
+  padding: 10px;
+  text-align: center;
+  background: #0E0A17;
+  color: #eee;   /* or var(--flexx-dirtywhite) */
+  font-size: 18px;
+  /* Give it a consistent height if you want: */
+  min-height: 50px; 
+}
 
+  
+/*********************************
+   EXPANDED VIEW (photo-cards)
+**********************************/
+.expanded-view {
+  display: none; /* or flex when shown */
+  gap: 15px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+/* The small “photo cards” in expanded view */
 .photo-card {
   width: 200px;
   height: 130px;
@@ -3307,52 +3317,37 @@ ul {
   transition: transform 0.3s;
   margin-bottom: 20px;
 }
-
 .photo-card img {
   width: 100%;
-  height: auto;
-  object-fit: cover; /* Crop to fill */
+  height: 100%; 
+  object-fit: cover;
   display: block;
 }
-
 .photo-card:hover {
   transform: scale(1.05);
 }
 
 /*********************************
-  Back Button Wrapper
-**********************************/
-.back-button-wrapper {
-  width: 100%;
-  text-align: center;
-  margin-top: 20px;
-}
-
-/*********************************
-  Modal
+  MODAL
 **********************************/
 .image-modal {
   display: none;
   position: fixed;
-  z-index: 9999; /* Make sure this is high */
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
+  z-index: 9999;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
   background-color: rgba(0, 0, 0, 0.8);
   justify-content: center;
   align-items: center;
 }
-
 .modal-content {
-  width: auto;       /* Let the image decide its own width/height ratio */
+  width: auto;
   height: auto;
   max-width: 80%;
   max-height: 80%;
-  object-fit: contain; /* if you want to ensure no cropping */
-  display: block;      /* remove any inline spacing issues */
+  object-fit: contain;
+  display: block;
 }
-
 .close-modal {
   position: absolute;
   top: 20px;
