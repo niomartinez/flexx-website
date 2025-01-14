@@ -3273,6 +3273,7 @@ ul {
   object-fit: cover;
   position: absolute;
   animation: slide 9s infinite;
+  transition: opacity 0.5s ease-in-out; /* optional fade */
 }
 
 @keyframes slide {
@@ -3300,6 +3301,7 @@ ul {
 
 .photo-card {
   width: 200px;
+  height: 150px;
   border-radius: 15px;
   overflow: hidden;
   position: relative;
@@ -3311,6 +3313,7 @@ ul {
 .photo-card img {
   width: 100%;
   height: auto;
+  object-fit: cover; /* Crop to fill */
   display: block;
 }
 
@@ -3344,8 +3347,12 @@ ul {
 }
 
 .modal-content {
+  width: auto;       /* Let the image decide its own width/height ratio */
+  height: auto;
   max-width: 80%;
   max-height: 80%;
+  object-fit: contain; /* if you want to ensure no cropping */
+  display: block;      /* remove any inline spacing issues */
 }
 
 .close-modal {
