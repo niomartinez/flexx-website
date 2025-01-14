@@ -32,6 +32,8 @@
     <link rel="stylesheet" href="assets/vendors/bootstrap-select/css/bootstrap-select.min.css" />
     <link rel="stylesheet" href="assets/vendors/nice-select/nice-select.css" />
     <link rel="stylesheet" href="assets/vendors/jquery-ui/jquery-ui.css" />
+    <linkb rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"/>
+
     <!-- Rellax JS -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/rellax/1.12.1/rellax.min.js"></script>
 
@@ -1045,6 +1047,8 @@
     <script src="assets/vendors/countdown/countdown.min.js"></script>
     <script src="assets/vendors/marque/marquee.min.js"></script>
     <script src="assets/vendors/sidebar-content/jquery-sidebar-content.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+
     <!-- template js -->
     <script>
         // We'll store the fetched album data here
@@ -1070,50 +1074,97 @@
         });
     
         function buildAlbumCards(albums) {
-            const albumView = document.getElementById('album-view');
-            albumView.innerHTML = '';
+        const albumView = document.getElementById('album-view');
+        albumView.innerHTML = '';
 
-            albums.forEach(album => {
-                const albumCard = document.createElement('div');
-                albumCard.className = 'album-card';
+        albums.forEach(album => {
+            // The album card
+            const albumCard = document.createElement('div');
+            albumCard.className = 'album-card';
 
-                // The main .carousel
-                const carouselDiv = document.createElement('div');
-                carouselDiv.className = 'carousel';
+            // Swiper container
+            const swiperDiv = document.createElement('div');
+            swiperDiv.className = 'swiper'; // key Swiper class
 
-                // The sliding wrapper .carousel-inner
-                const carouselInner = document.createElement('div');
-                carouselInner.className = 'carousel-inner';
+            // Swiper wrapper
+            const wrapperDiv = document.createElement('div');
+            wrapperDiv.className = 'swiper-wrapper';
 
-                // Just show the first 3 images for the album thumbnail
-                const firstThree = album.images.slice(0, 3);
+            // Use the first 3 images for the album thumbnail carousel
+            const firstThree = album.images.slice(0, 3);
 
-                firstThree.forEach(img => {
-                const imgEl = document.createElement('img');
-                imgEl.src = img;
-                imgEl.alt = album.title;
-                carouselInner.appendChild(imgEl);
-                });
+            firstThree.forEach(img => {
+            const slideDiv = document.createElement('div');
+            slideDiv.className = 'swiper-slide';
 
-                // Put .carousel-inner inside .carousel
-                carouselDiv.appendChild(carouselInner);
+            const imgEl = document.createElement('img');
+            imgEl.src = img;
+            imgEl.alt = album.title;
 
-                // Album title
-                const title = document.createElement('div');
-                title.className = 'album-title';
-                title.textContent = album.title.replace(/-/g, ' ');
-
-                // Add it all to the albumCard
-                albumCard.appendChild(carouselDiv);
-                albumCard.appendChild(title);
-
-                // Finally add albumCard to the album view
-                albumView.appendChild(albumCard);
-
-                // On click, show expanded
-                albumCard.onclick = () => expandAlbum(album.title);
+            slideDiv.appendChild(imgEl);
+            wrapperDiv.appendChild(slideDiv);
             });
-            }
+
+            swiperDiv.appendChild(wrapperDiv);
+
+            // Optional: add nav or pagination elements:
+            const nextEl = document.createElement('div');
+            nextEl.className = 'swiper-button-next';
+            swiperDiv.appendChild(nextEl);
+
+            const prevEl = document.createElement('div');
+            prevEl.className = 'swiper-button-prev';
+            swiperDiv.appendChild(prevEl);
+
+            const paginationEl = document.createElement('div');
+            paginationEl.className = 'swiper-pagination';
+            swiperDiv.appendChild(paginationEl);
+
+            // Title
+            const albumTitleDiv = document.createElement('div');
+            albumTitleDiv.className = 'album-title';
+            albumTitleDiv.textContent = album.title.replace(/-/g, ' ');
+
+            // Combine
+            albumCard.appendChild(swiperDiv);
+            albumCard.appendChild(albumTitleDiv);
+            albumView.appendChild(albumCard);
+
+            // On click, expand album
+            albumCard.onclick = () => expandAlbum(album.title);
+        });
+
+        // After building all the album cards,
+        // initialize Swiper for each .swiper you created.
+        initSwipers();
+        }
+
+        function initSwipers() {
+        // Grab all the .swiper containers in album-view
+        document.querySelectorAll('.swiper').forEach((swiperEl) => {
+            new Swiper(swiperEl, {
+            // Optional parameters
+            slidesPerView: 1,
+            loop: true,
+            navigation: {
+                nextEl: swiperEl.querySelector('.swiper-button-next'),
+                prevEl: swiperEl.querySelector('.swiper-button-prev'),
+            },
+            pagination: {
+                el: swiperEl.querySelector('.swiper-pagination'),
+                clickable: true,
+            },
+            autoplay: {
+                delay: 3000,          // 3 seconds
+                disableOnInteraction: false
+            },
+            // e.g. slide effect or fade effect
+            effect: 'slide',
+            speed: 600, // transition speed
+            // etc. (check Swiper docs for more config)
+            });
+        });
+        }
 
     
         function expandAlbum(albumTitle) {

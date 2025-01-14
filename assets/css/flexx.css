@@ -3244,22 +3244,44 @@ ul {
   Album Cards
 **********************************/
 .album-card {
-  display: flex;
-  width: 300px;
+  width: 300px;        /* or a % if you want it responsive */
+  background-color: #f5f5f5;
   border-radius: 15px;
   overflow: hidden;
-  position: relative;
-  cursor: pointer;
-  transition: transform 0.3s;
-  background-color: #f5f5f5;
   margin-bottom: 20px;
+  display: flex;
   flex-direction: column;
   justify-content: center;
+  cursor: pointer;
+  transition: transform 0.3s;
 }
 
 .album-card:hover {
   transform: scale(1.05);
 }
+
+.swiper {
+  width: 100%;        /* fill the card’s width (300px) */
+  height: 200px;      /* your desired height */
+  position: relative; /* required for nav buttons to float inside */
+}
+
+.swiper-slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Optional: style the nav or pagination if needed */
+.swiper-button-next, .swiper-button-prev {
+  color: #fff;
+  /* or custom styling */
+}
+.swiper-pagination-bullet {
+  background-color: #fff;
+}
+
 
 /*********************************
   Carousel
@@ -3289,13 +3311,6 @@ ul {
   height: 200px;
   object-fit: cover;
   display: block;
-}
-
-/* Keyframe moves .carousel-inner from 0 → -300px → -600px */
-@keyframes slide {
-  0%, 33%    { transform: translateX(0);       }
-  34%, 66%   { transform: translateX(-300px); }
-  67%, 100%  { transform: translateX(-600px); }
 }
 
 
