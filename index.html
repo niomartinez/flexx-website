@@ -1048,6 +1048,37 @@
 
     <!-- template js -->
     <script>
+        // Simulate the output of the PHP script
+        // const albumsData = [
+        //     {
+        //     title: "AFTER-PARTY-PHOTOS",
+        //     images: [
+        //         "assets/images/events/AFTER-PARTY-PHOTOS/DSC00005.jpg",
+        //         "assets/images/events/AFTER-PARTY-PHOTOS/DSC00138.jpg",
+        //         "assets/images/events/AFTER-PARTY-PHOTOS/DSC00150.jpg",
+        //     ],
+        //     },
+        //     {
+        //     title: "FLEXX-CONFERENCE-PHOTOS-JULY",
+        //     images: [
+        //         "assets/images/events/FLEXX-CONFERENCE-PHOTOS-JULY/event-19.jpg",
+        //         "assets/images/events/FLEXX-CONFERENCE-PHOTOS-JULY/event-44.jpg",
+        //         "assets/images/events/FLEXX-CONFERENCE-PHOTOS-JULY/event-5.jpg",
+        //     ],
+        //     },
+        //     {
+        //     title: "HQ-VISIT-JULY",
+        //     images: [
+        //         "assets/images/events/HQ-VISIT-JULY/BEVisit-1.jpg",
+        //         "assets/images/events/HQ-VISIT-JULY/BEVisit-13.jpg",
+        //         "assets/images/events/HQ-VISIT-JULY/BEVisit-16.jpg",
+        //     ],
+        //     },
+        // ];
+
+        // document.addEventListener("DOMContentLoaded", () => {
+        //     buildAlbumCards(albumsData);
+        // });
         // We'll store the fetched album data here
         let albumsData = [];
     
@@ -1071,43 +1102,39 @@
         });
     
         function buildAlbumCards(albums) {
-          const albumView = document.getElementById('album-view');
-          albumView.innerHTML = ''; // Clear existing
-    
-          // For each album, create an album card
-          albums.forEach(album => {
-            // Create the main album card container
-            const albumCard = document.createElement('div');
-            albumCard.className = 'album-card';
-            // On click, call expandAlbum
-            albumCard.onclick = () => expandAlbum(album.title);
-    
-            // Create the carousel
-            const carouselDiv = document.createElement('div');
-            carouselDiv.className = 'carousel';
-    
-            // Show first 3 images (or fewer if album has < 3)
-            const firstThree = album.images.slice(0, 3);
-            firstThree.forEach(img => {
-              const imgEl = document.createElement('img');
-              imgEl.src = img;
-              imgEl.alt = album.title;
-              imgEl.className = 'album-thumbnail';
-              carouselDiv.appendChild(imgEl);
+            const albumView = document.getElementById("album-view");
+            albumView.innerHTML = ""; // Clear existing content
+
+            albums.forEach((album) => {
+                // Create the album card container
+                const albumCard = document.createElement("div");
+                albumCard.className = "album-card";
+                albumCard.onclick = () => expandAlbum(album.title); // Set up click handler
+
+                // Create carousel
+                const carouselDiv = document.createElement("div");
+                carouselDiv.className = "carousel";
+
+                album.images.slice(0, 3).forEach((img) => {
+                const imgEl = document.createElement("img");
+                imgEl.src = img;
+                imgEl.alt = album.title;
+                carouselDiv.appendChild(imgEl);
+                });
+
+                // Create album title
+                const albumTitleDiv = document.createElement("div");
+                albumTitleDiv.className = "album-title";
+                albumTitleDiv.textContent = album.title.replace(/-/g, " ");
+
+                // Combine and append to album view
+                albumCard.appendChild(carouselDiv);
+                albumCard.appendChild(albumTitleDiv);
+                albumView.appendChild(albumCard);
             });
-    
-            // Create the album title
-            const albumTitleDiv = document.createElement('div');
-            albumTitleDiv.className = 'album-title';
-            // Replace dashes with spaces for user-friendly display
-            albumTitleDiv.textContent = album.title.replace(/-/g, ' ');
-    
-            // Append
-            albumCard.appendChild(carouselDiv);
-            albumCard.appendChild(albumTitleDiv);
-            albumView.appendChild(albumCard);
-          });
-        }
+            }
+
+
     
         function expandAlbum(albumTitle) {
           const album = albumsData.find(a => a.title === albumTitle);
