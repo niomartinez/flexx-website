@@ -646,16 +646,10 @@
     if ($(".preloader").length) {
       $(".preloader").fadeOut();
     }
-    thmSwiperInit();
+    // thmSwiperInit();
     thmOwlInit();
     projectMasonaryLayout();
     fullHeight();
-
-
-
-
-
-
 
 
     if ($(".post-filter").length) {
