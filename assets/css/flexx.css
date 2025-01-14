@@ -3267,18 +3267,19 @@ ul {
 .carousel {
   position: relative;
   overflow: hidden;
-  width: 100%;    /* or a fixed width if desired */
+  width: 300px;    /* or a fixed width if desired */
   height: 200px;  /* your chosen thumbnail height */
 }
 
+/* The container that actually slides */
 .carousel-inner {
-  display: flex;         /* side-by-side images */
-  width: 300%;           /* 3 slides => 300% width */
+  width: 300%;
   height: 100%;
-  animation: slide 9s infinite; /* The keyframe below */
+  display: flex;          /* horizontal row of 3 images */
+  animation: slide 9s infinite; 
 }
 
-/* Each image is 1/3rd of the .carousel-inner’s width */
+/* Each image is 1/3 of .carousel-inner */
 .carousel-inner img {
   width: 33.3333%;
   height: 100%;
@@ -3286,12 +3287,14 @@ ul {
   display: block;
 }
 
+
 /* Now we shift .carousel-inner left in 3 steps */
 @keyframes slide {
-  0%, 33%   { transform: translateX(0); }
+  0%, 33%   { transform: translateX(0);      }
   34%, 66%  { transform: translateX(-100%); }
   67%, 100% { transform: translateX(-200%); }
 }
+
 
 
 /*********************************

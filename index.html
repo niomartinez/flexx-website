@@ -1076,40 +1076,44 @@
             albums.forEach(album => {
                 const albumCard = document.createElement('div');
                 albumCard.className = 'album-card';
-                albumCard.onclick = () => expandAlbum(album.title);
 
+                // The main .carousel
                 const carouselDiv = document.createElement('div');
                 carouselDiv.className = 'carousel';
 
-                // The sliding container
+                // The sliding wrapper .carousel-inner
                 const carouselInner = document.createElement('div');
                 carouselInner.className = 'carousel-inner';
 
-                // Take first 3 images for the album's thumbnail carousel
+                // Just show the first 3 images for the album thumbnail
                 const firstThree = album.images.slice(0, 3);
 
                 firstThree.forEach(img => {
                 const imgEl = document.createElement('img');
                 imgEl.src = img;
                 imgEl.alt = album.title;
-                imgEl.className = 'album-thumbnail';
                 carouselInner.appendChild(imgEl);
                 });
 
-                // Insert .carousel-inner into .carousel
+                // Put .carousel-inner inside .carousel
                 carouselDiv.appendChild(carouselInner);
 
-                // Title
-                const albumTitleDiv = document.createElement('div');
-                albumTitleDiv.className = 'album-title';
-                albumTitleDiv.textContent = album.title.replace(/-/g, ' ');
+                // Album title
+                const title = document.createElement('div');
+                title.className = 'album-title';
+                title.textContent = album.title.replace(/-/g, ' ');
 
-                // Append
+                // Add it all to the albumCard
                 albumCard.appendChild(carouselDiv);
-                albumCard.appendChild(albumTitleDiv);
+                albumCard.appendChild(title);
+
+                // Finally add albumCard to the album view
                 albumView.appendChild(albumCard);
+
+                // On click, show expanded
+                albumCard.onclick = () => expandAlbum(album.title);
             });
-        }
+            }
 
     
         function expandAlbum(albumTitle) {
