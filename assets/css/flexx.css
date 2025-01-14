@@ -3217,55 +3217,55 @@ ul {
   line-height: 16px;
 }
 
-  /*--------------------------------------------------------------
-  # Gallery One
-  --------------------------------------------------------------*/
  /*********************************
-   GALLERY & ALBUM CARDS
+  Gallery & Album Cards
 **********************************/
 .album-view {
   display: flex;
   flex-wrap: wrap;
   gap: 15px;
-  justify-content: center;
+  justify-content: center; 
   margin-bottom: 30px; 
-  /* remove position: relative if not needed */
 }
 
 .album-card {
-  width: 300px;              /* fixed card width */
+  /* Force the card to be 300px wide total */
+  width: 300px !important; 
   background-color: #f5f5f5;
   border-radius: 15px;
   overflow: hidden;
   margin-bottom: 20px;
+  /* Basic flex column so the title is below the slider */
   display: flex;
   flex-direction: column;
+  justify-content: flex-start;
   cursor: pointer;
   transition: transform 0.3s;
 }
+
 .album-card:hover {
   transform: scale(1.05);
 }
 
 /*********************************
-   SWIPER STYLES
+  Swiper container in each card
 **********************************/
 .swiper {
-  /* The top area of the card (thumbnail carousel) */
-  width: 300px;    /* match album-card width */
-  height: 200px;   /* the old “card size” look */
+  /* The top portion is 300×200 */
+  width: 100% !important; /* fill the .album-card’s width (300px) */
+  height: 200px !important; 
   position: relative;
   overflow: hidden;
 }
 
-/* Each slide just fills the .swiper area */
+/* Let Swiper handle the slides; each .swiper-slide is 300×200 */
 .swiper-slide {
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-/* The images fill 300×200 fully */
+/* Each image covers 300×200 fully */
 .swiper-slide img {
   width: 100%;
   height: 100%;
@@ -3273,8 +3273,10 @@ ul {
   display: block;
 }
 
-/* OPTIONAL: style your nav & pagination */
-.swiper-button-next,
+/*********************************
+  Swiper navigation & pagination
+**********************************/
+.swiper-button-next, 
 .swiper-button-prev {
   color: #fff; /* or your brand color */
 }
@@ -3283,30 +3285,32 @@ ul {
 }
 
 /*********************************
-   ALBUM TITLE
+  Album Title
 **********************************/
 .album-title {
+  /* Below the Swiper area, 
+     so total card is ~300px wide, 
+     200px tall for slider, 
+     plus a bit for the title. */
   padding: 10px;
   text-align: center;
   background: #0E0A17;
-  color: #eee;   /* or var(--flexx-dirtywhite) */
+  color: #eee;
   font-size: 18px;
-  /* Give it a consistent height if you want: */
-  min-height: 50px; 
+  min-height: 50px; /* adjust if you want more or less space */
+  box-sizing: border-box;
 }
 
-  
 /*********************************
-   EXPANDED VIEW (photo-cards)
+  Expanded View Photo Cards
 **********************************/
 .expanded-view {
   display: none; /* or flex when shown */
-  gap: 15px;
   flex-wrap: wrap;
+  gap: 15px;
   justify-content: center;
 }
 
-/* The small “photo cards” in expanded view */
 .photo-card {
   width: 200px;
   height: 130px;
@@ -3319,8 +3323,8 @@ ul {
 }
 .photo-card img {
   width: 100%;
-  height: 100%; 
-  object-fit: cover;
+  height: 100%;
+  object-fit: cover; 
   display: block;
 }
 .photo-card:hover {
@@ -3328,18 +3332,21 @@ ul {
 }
 
 /*********************************
-  MODAL
+  Modal
 **********************************/
 .image-modal {
   display: none;
   position: fixed;
   z-index: 9999;
-  top: 0; left: 0;
-  width: 100%; height: 100%;
+  top: 0; 
+  left: 0;
+  width: 100%; 
+  height: 100%;
   background-color: rgba(0, 0, 0, 0.8);
   justify-content: center;
   align-items: center;
 }
+
 .modal-content {
   width: auto;
   height: auto;
@@ -3348,6 +3355,7 @@ ul {
   object-fit: contain;
   display: block;
 }
+
 .close-modal {
   position: absolute;
   top: 20px;
