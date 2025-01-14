@@ -3265,36 +3265,38 @@ ul {
   Carousel
 **********************************/
 .carousel {
-  position: relative;
+  width: 300px;   /* match album-card’s width exactly */
+  height: 200px;  /* your chosen height */
   overflow: hidden;
-  width: 300px;    /* or a fixed width if desired */
-  height: 200px;  /* your chosen thumbnail height */
+  position: relative;
+  margin: 0;      /* ensure no extra spacing if needed */
+  padding: 0;     /* same reason */
 }
 
-/* The container that actually slides */
+/* The container that slides left and right */
 .carousel-inner {
-  width: 300%;
+  width: 900px;        /* 3 images => 3×300 = 900px total */
   height: 100%;
-  display: flex;          /* horizontal row of 3 images */
-  animation: slide 9s infinite; 
+  display: flex;
+  animation: slide 9s infinite;
+  margin: 0;
+  padding: 0;
 }
 
-/* Each image is 1/3 of .carousel-inner */
+/* Each image is 300×200, side by side */
 .carousel-inner img {
-  width: 33.3333%;
-  height: 100%;
+  width: 300px;  /* 1/3 of 900px */
+  height: 200px;
   object-fit: cover;
   display: block;
 }
 
-
-/* Now we shift .carousel-inner left in 3 steps */
+/* Keyframe moves .carousel-inner from 0 → -300px → -600px */
 @keyframes slide {
-  0%, 33%   { transform: translateX(0);      }
-  34%, 66%  { transform: translateX(-33.3%); }
-  67%, 100% { transform: translateX(-66.6%); }
+  0%, 33%    { transform: translateX(0);       }
+  34%, 66%   { transform: translateX(-300px); }
+  67%, 100%  { transform: translateX(-600px); }
 }
-
 
 
 /*********************************
