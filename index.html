@@ -32,6 +32,9 @@
     <link rel="stylesheet" href="assets/vendors/bootstrap-select/css/bootstrap-select.min.css" />
     <link rel="stylesheet" href="assets/vendors/nice-select/nice-select.css" />
     <link rel="stylesheet" href="assets/vendors/jquery-ui/jquery-ui.css" />
+    <!-- Rellax JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/rellax/1.12.1/rellax.min.js"></script>
+
 
     <!-- template styles -->
     <link rel="stylesheet" href="assets/css/eventflow.css" />
@@ -44,9 +47,6 @@
         <div class="preloader__image"></div>
     </div>
     <!-- /.preloader -->
-
-
-
     <!-- Start sidebar widget content -->
     <div class="xs-sidebar-group info-group info-sidebar">
         <div class="xs-overlay xs-bg-black"></div>
@@ -91,6 +91,9 @@
             </div>
         </div>
     </div>
+
+    <!-- Parallax Bars Container (no content inside yet) -->
+    <div class="rellax-container"></div>
     <!-- End sidebar widget content -->
     <div class="page-wrapper">
         <header class="main-header">
@@ -116,15 +119,9 @@
                                 </li>
                                 <li class="scrollToLink">
                                     <a href="#testimonials">Testimonials</a>
-                                    <!-- <ul>
-                                        <li><a href="#stories">Stories</a></li>
-                                    </ul> -->
                                 </li>
                                 <li class="scrollToLink">
-                                    <a href="#team">Events</a>
-                                    <!-- <ul>
-                                        <li><a href="#gallery">Gallery</a></li>
-                                    </ul> -->
+                                    <a href="#events">Events</a>
                                 </li>
                             </ul>
                         </div>
@@ -139,8 +136,8 @@
         </header>        
 
         <div class="stricky-header stricked-menu main-menu">
-            <div class="sticky-header__content"></div><!-- /.sticky-header__content -->
-        </div><!-- /.stricky-header -->
+            <div class="sticky-header__content"></div>
+        </div>
 
         <!--Main Slider Start-->
         <section class="main-slider" id="home">
@@ -158,24 +155,6 @@
             }'>
                 <div class="swiper-wrapper">
                     <div class="swiper-slide">
-                        <!-- <div class="main-slider__img">
-                            <img src="assets/images/resources/main-slider-img-1-1.jpg" alt="">
-                        </div>
-                        <div class="main-slider__shpae-1">
-                            <img src="assets/images/shapes/main-slider-shape-1.png" alt="">
-                        </div>
-                        <div class="main-slider__shpae-2">
-                            <img src="assets/images/shapes/main-slider-shape-2.png" alt="">
-                        </div>
-                        <div class="main-slider__start-1">
-                            <img src="assets/images/shapes/main-slider-star-1.png" alt="">
-                        </div>
-                        <div class="main-slider__start-2 zoominout">
-                            <img src="assets/images/shapes/main-slider-star-2.png" alt="">
-                        </div>
-                        <div class="main-slider__start-3">
-                            <img src="assets/images/shapes/main-slider-star-3.png" alt="">
-                        </div> -->
                         <div class="container">
                             <div class="row">
                                 <div class="col-xl-12">
@@ -189,7 +168,8 @@
                                         </ul>
                                         <div class="main-slider__btn-box">
                                             <a href="#" class="main-slider__btn thm-btn">Get Started
-                                                <span class="icon-arrow-right"></span> </a>
+                                                <span class="icon-arrow-right"></span> 
+                                            </a>
                                         </div>
                                     </div>
                                 </div>
@@ -197,14 +177,9 @@
                         </div>
                     </div>
                 </div>
-
-                <!-- <div class="swiper-pagination" id="main-slider-pagination"></div> -->
-                <!-- If we need navigation buttons -->
-
             </div>
         </section>
         <!--Main Slider End-->
-
         <!-- Team One Start -->
         <section class="team-one" id="team">
             <div class="container">
@@ -498,39 +473,10 @@
                             </div>
                             <h2 class="section-title__title">Why and How <br> TEAM FLEXX <br> was built</h2>
                         </div>
-                        <!-- <div class="event-one__btn-box">
-                            <a href="event-details.html" class="event-one__btn thm-btn">Join The Event <span
-                                    class="icon-arrow-right"></span> </a>
-                        </div> -->
                     </div>
-                    <!-- <ul class="list-unstyled event-one__points">
-                        <li>
-                            <div class="icon">
-                                <span class="icon-air-horn"></span>
-                            </div>
-                            <div class="content">
-                                <h4><a href="event.html">Artists & bands</a></h4>
-                                <p>Events bring people together for a shared experien celebration a <br> From weddings
-                                    and birthdays to conferences </p>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="icon">
-                                <span class="icon-party-blower"></span>
-                            </div>
-                            <div class="content">
-                                <h4><a href="event.html">Audience Event Planner</a></h4>
-                                <p>Events bring people together for a shared experien celebration a <br> From weddings
-                                    and birthdays to conferences </p>
-                            </div>
-                        </li>
-                    </ul> -->
                     <p class="event-one__text">FLEXX was created to provide a healthy trading community that utilizes outstanding digital products that would not only serve but exceed the needs of our loyal customers. 
                         The dedication to our work is reflected through our great selection of carefully curated and sorted digital products, to make our trading journey with lesser risk yet profitable,
                         get in touch to learn more about FLEXX.</p>
-                    <!-- <div class="event-one__img-box">
-                        <img src="assets/images/resources/event-one-img-1.jpg" alt="">
-                    </div> -->
                     <div class="event-one__video-box">
                         <video autoplay loop playsinline controls>
                             <source src="/assets/vids/vid-placeholder.mp4" type="video/mp4">
@@ -542,246 +488,175 @@
                 </div>
             </div>
         </section>
-        <!-- Event One End -->
-
-        <!-- Buy Ticket Start -->
-        <!-- <section class="buy-ticket">
-            <div class="container">
-                <div class="row">
-                    <div class="col-xl-6">
-                        <div class="buy-ticket__left wow fadeInLeft" data-wow-delay="100ms">
-                            <ul class="buy-ticket__address list-unstyled">
-                                <li>
-                                    <div class="icon">
-                                        <span class="icon-clock"></span>
-                                    </div>
-                                    <div class="text">
-                                        <p>Mirpur 01 Road N 12 Dhaka Bangladesh</p>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="icon">
-                                        <span class="icon-pin"></span>
-                                    </div>
-                                    <div class="text">
-                                        <p>10 Am To 10 Pm 20 April 2024</p>
-                                    </div>
-                                </li>
-                            </ul>
-                            <h3 class="buy-ticket__title">Grab Your Seat Wow Or You May Regret it Once</h3>
-                            <p class="buy-ticket__text">Events bring people together for a shared experien celebration a
-                                From weddings and <br> birthdays to conferences Events bring people together for a
-                                shared </p>
-                            <div class="buy-ticket__btn-box">
-                                <a href="contact.html" class="buy-ticket__btn-1 thm-btn">Buy Your Ticket<span
-                                        class="icon-arrow-right"></span> </a>
-                                <a href="contact.html" class="buy-ticket__btn-2 thm-btn">Contact Us<span
-                                        class="icon-arrow-right"></span> </a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-6">
-                        <div class="buy-ticket__right wow fadeInRight" data-wow-delay="300ms">
-                            <div class="buy-ticket__img">
-                                <img src="assets/images/resources/buy-ticket-img.jpg" alt="">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section> -->
-        <!-- Buy Ticket End -->
         <!--Testimonial Page Start-->
-        <section class="testimonial-page" id="testimonials">
+        <!--Testimonial Page Start-->
+        <section class="testimonial-page testimonial-one" id="testimonials">
             <div class="container">
-                <div class="row">
-                    <!--Testimonial One Single Start-->
-                    <div class="col-xl-6 col-lg-6 col-md-6">
-                        <div class="testimonial-one__single">
-                            <div class="testimonial-one__client-info-and-review">
-                                <div class="testimonial-one__client-info">
-                                    <div class="testimonial-one__client-img">
-                                        <img src="assets/images/testimonial/testimonial-one-client-1-1.jpg" alt="">
-                                    </div>
-                                    <div class="testimonial-one__client-content">
-                                        <h4 class="testimonial-one__client-name"><a href="testimonials.html">jonathon
-                                                Doe</a></h4>
-                                        <p class="testimonial-one__sub-title">Officer</p>
-                                    </div>
-                                </div>
-                                <!-- <div class="testimonial-one__review">
-                                    <span class="icon-star"></span>
-                                    <span class="icon-star"></span>
-                                    <span class="icon-star"></span>
-                                    <span class="icon-star"></span>
-                                    <span class="icon-star clr-start"></span>
-                                </div> -->
-                            </div>
-                            <p class="testimonial-one__text">Team Flexx has completely transformed my trading journey. 
-                                The community is supportive, and the digital tools they offer are outstanding. 
-                                It feels great to be part of a team that prioritizes both profitability and risk management.</p>
-                            <div class="testimonial-one__quote">
-                                <span class="icon-quote"></span>
-                            </div>
-                        </div>
-                    </div>
-                    <!--Testimonial One Single End-->
-                    <!--Testimonial One Single Start-->
-                    <div class="col-xl-6 col-lg-6 col-md-6">
-                        <div class="testimonial-one__single">
-                            <div class="testimonial-one__client-info-and-review">
-                                <div class="testimonial-one__client-info">
-                                    <div class="testimonial-one__client-img">
-                                        <img src="assets/images/testimonial/testimonial-one-client-1-2.jpg" alt="">
-                                    </div>
-                                    <div class="testimonial-one__client-content">
-                                        <h4 class="testimonial-one__client-name"><a href="testimonials.html">jonathon
-                                                Cample</a></h4>
-                                        <p class="testimonial-one__sub-title">Designer</p>
-                                    </div>
-                                </div>
-                                <!-- <div class="testimonial-one__review">
-                                    <span class="icon-star"></span>
-                                    <span class="icon-star"></span>
-                                    <span class="icon-star"></span>
-                                    <span class="icon-star"></span>
-                                    <span class="icon-star clr-start"></span>
-                                </div> -->
-                            </div>
-                            <p class="testimonial-one__text">Joining Team Flexx was one of the best decisions I've made. 
-                                Their curated products are top-notch, and the collaborative atmosphere motivates me every day to grow 
-                                and improve my trading strategies.</p>
-                            <div class="testimonial-one__quote">
-                                <span class="icon-quote"></span>
-                            </div>
-                        </div>
-                    </div>
-                    <!--Testimonial One Single End-->
-                    <!--Testimonial One Single Start-->
-                    <div class="col-xl-6 col-lg-6 col-md-6">
-                        <div class="testimonial-one__single">
-                            <div class="testimonial-one__client-info-and-review">
-                                <div class="testimonial-one__client-info">
-                                    <div class="testimonial-one__client-img">
-                                        <img src="assets/images/testimonial/testimonial-one-client-1-3.jpg" alt="">
-                                    </div>
-                                    <div class="testimonial-one__client-content">
-                                        <h4 class="testimonial-one__client-name"><a href="testimonials.html">jonathon
-                                                Trot</a></h4>
-                                        <p class="testimonial-one__sub-title">Officer</p>
-                                    </div>
-                                </div>
-                                <!-- <div class="testimonial-one__review">
-                                    <span class="icon-star"></span>
-                                    <span class="icon-star"></span>
-                                    <span class="icon-star"></span>
-                                    <span class="icon-star"></span>
-                                    <span class="icon-star clr-start"></span>
-                                </div> -->
-                            </div>
-                            <p class="testimonial-one__text">I love being a part of Team Flexx! 
-                                The resources they provide are not only innovative but incredibly user-friendly. 
-                                My trading has become more profitable and far less stressful thanks to their excellent support.</p>
-                            <div class="testimonial-one__quote">
-                                <span class="icon-quote"></span>
-                            </div>
-                        </div>
-                    </div>
-                    <!--Testimonial One Single End-->
-                    <!--Testimonial One Single Start-->
-                    <div class="col-xl-6 col-lg-6 col-md-6">
-                        <div class="testimonial-one__single">
-                            <div class="testimonial-one__client-info-and-review">
-                                <div class="testimonial-one__client-info">
-                                    <div class="testimonial-one__client-img">
-                                        <img src="assets/images/testimonial/testimonial-one-client-1-4.jpg" alt="">
-                                    </div>
-                                    <div class="testimonial-one__client-content">
-                                        <h4 class="testimonial-one__client-name"><a href="testimonials.html">jonathon
-                                                Smith</a></h4>
-                                        <p class="testimonial-one__sub-title">Designer</p>
-                                    </div>
-                                </div>
-                                <!-- <div class="testimonial-one__review">
-                                    <span class="icon-star"></span>
-                                    <span class="icon-star"></span>
-                                    <span class="icon-star"></span>
-                                    <span class="icon-star"></span>
-                                    <span class="icon-star clr-start"></span>
-                                </div> -->
-                            </div>
-                            <p class="testimonial-one__text">Team Flexx offers a rare blend of expertise, technology, and a sense of community. 
-                                The digital products they’ve introduced have significantly reduced my trading risks, 
-                                making the whole experience much more enjoyable.</p>
-                            <div class="testimonial-one__quote">
-                                <span class="icon-quote"></span>
-                            </div>
-                        </div>
-                    </div>
-                    <!--Testimonial One Single End-->
-                    <!--Testimonial One Single Start-->
-                    <div class="col-xl-6 col-lg-6 col-md-6">
-                        <div class="testimonial-one__single">
-                            <div class="testimonial-one__client-info-and-review">
-                                <div class="testimonial-one__client-info">
-                                    <div class="testimonial-one__client-img">
-                                        <img src="assets/images/testimonial/testimonial-one-client-1-4.jpg" alt="">
-                                    </div>
-                                    <div class="testimonial-one__client-content">
-                                        <h4 class="testimonial-one__client-name"><a href="testimonials.html">Abral
-                                                Sing</a></h4>
-                                        <p class="testimonial-one__sub-title">Designer</p>
-                                    </div>
-                                </div>
-                                <!-- <div class="testimonial-one__review">
-                                    <span class="icon-star"></span>
-                                    <span class="icon-star"></span>
-                                    <span class="icon-star"></span>
-                                    <span class="icon-star"></span>
-                                    <span class="icon-star clr-start"></span>
-                                </div> -->
-                            </div>
-                            <p class="testimonial-one__text">As a member of Team Flexx, I feel empowered in my trading journey. 
-                                The tools and guidance available are exactly what I needed to boost my confidence and 
-                                achieve better results with minimal risks.</p>
-                            <div class="testimonial-one__quote">
-                                <span class="icon-quote"></span>
-                            </div>
-                        </div>
-                    </div>
-                    <!--Testimonial One Single End-->
-                    <!--Testimonial One Single Start-->
-                    <div class="col-xl-6 col-lg-6 col-md-6">
-                        <div class="testimonial-one__single">
-                            <div class="testimonial-one__client-info-and-review">
-                                <div class="testimonial-one__client-info">
-                                    <div class="testimonial-one__client-img">
-                                        <img src="assets/images/testimonial/testimonial-one-client-1-6.jpg" alt="">
-                                    </div>
-                                    <div class="testimonial-one__client-content">
-                                        <h4 class="testimonial-one__client-name"><a href="testimonials.html">Hasil
-                                                Khan</a></h4>
-                                        <p class="testimonial-one__sub-title">Designer</p>
-                                    </div>
-                                </div>
-                                <!-- <div class="testimonial-one__review">
-                                    <span class="icon-star"></span>
-                                    <span class="icon-star"></span>
-                                    <span class="icon-star"></span>
-                                    <span class="icon-star"></span>
-                                    <span class="icon-star clr-start"></span>
-                                </div> -->
-                            </div>
-                            <p class="testimonial-one__text">Being part of Team Flexx is more than just trading—it’s about belonging
-                                to a community that genuinely cares about your success. Their dedication to innovation 
-                                and excellence is truly inspiring.</p>
-                            <div class="testimonial-one__quote">
-                                <span class="icon-quote"></span>
-                            </div>
-                        </div>
-                    </div>
-                    <!--Testimonial One Single End-->
+            <!-- Section Title & Tagline -->
+            <div class="section-title text-center">
+                <div class="section-title__tagline-box">
+                <!-- Adjust this tagline as needed -->
+                <span class="section-title__tagline">Hear From Our Clients</span>
                 </div>
+                <!-- Adjust this main heading as needed -->
+                <h2 class="section-title__title section-title__title--two">
+                Our Testimonials
+                </h2>
+            </div>
+            <!-- /Section Title & Tagline -->
+        
+            <div class="row">
+                <!-- ======================
+                    1) TEXT TESTIMONIALS
+                ======================= -->
+                <div class="col-xl-6 col-lg-6 col-md-6">
+                <div class="testimonial-one__single">
+                    <div class="testimonial-one__client-info-and-review">
+                    <div class="testimonial-one__client-info">
+                        <div class="testimonial-one__client-img">
+                        <img
+                            src="assets/images/testimonial/testimonial-one-client-1-4.jpg"
+                            alt=""
+                        />
+                        </div>
+                        <div class="testimonial-one__client-content">
+                        <h4 class="testimonial-one__client-name">
+                            <a href="testimonials.html">Abral Sing</a>
+                        </h4>
+                        <p class="testimonial-one__sub-title">Designer</p>
+                        </div>
+                    </div>
+                    </div>
+                    <p class="testimonial-one__text">
+                    As a member of Team Flexx, I feel empowered in my trading journey.
+                    The tools and guidance available are exactly what I needed
+                    to boost my confidence and achieve better results with minimal risks.
+                    </p>
+                    <div class="testimonial-one__quote">
+                    <span class="icon-quote"></span>
+                    </div>
+                </div>
+                </div>
+        
+                <div class="col-xl-6 col-lg-6 col-md-6">
+                <div class="testimonial-one__single">
+                    <div class="testimonial-one__client-info-and-review">
+                    <div class="testimonial-one__client-info">
+                        <div class="testimonial-one__client-img">
+                        <img
+                            src="assets/images/testimonial/testimonial-one-client-1-6.jpg"
+                            alt=""
+                        />
+                        </div>
+                        <div class="testimonial-one__client-content">
+                        <h4 class="testimonial-one__client-name">
+                            <a href="testimonials.html">Hasil Khan</a>
+                        </h4>
+                        <p class="testimonial-one__sub-title">Designer</p>
+                        </div>
+                    </div>
+                    </div>
+                    <p class="testimonial-one__text">
+                    Being part of Team Flexx is more than just trading—it’s about 
+                    belonging to a community that genuinely cares about your success.
+                    Their dedication to innovation and excellence is truly inspiring.
+                    </p>
+                    <div class="testimonial-one__quote">
+                    <span class="icon-quote"></span>
+                    </div>
+                </div>
+                </div>
+        
+                <!-- =========================
+                    2) VIDEO TESTIMONIALS
+                ========================== -->
+                <div class="col-xl-6 col-lg-6 col-md-6">
+                <div class="testimonial-one__single testimonial-one__video-card">
+                    <div class="testimonial-one__client-info-and-review">
+                    <div class="testimonial-one__client-info">
+                        <div class="testimonial-one__client-img">
+                        <img
+                            src="assets/images/testimonial/testimonial-one-client-1-1.jpg"
+                            alt=""
+                        />
+                        </div>
+                        <div class="testimonial-one__client-content">
+                        <h4 class="testimonial-one__client-name">
+                            <a href="#">Michael Jordan</a>
+                        </h4>
+                        <p class="testimonial-one__sub-title">
+                            "Pro Trader / Influencer"
+                        </p>
+                        </div>
+                    </div>
+                    </div>
+                    <div class="testimonial-one__video-aspect-ratio">
+                    <video
+                        class="testimonial-one__video"
+                        controls
+                        poster="assets/images/testimonial/video-poster.jpg"
+                    >
+                        <source
+                        src="assets/vids/testimonials/vid-testimonials-1.mp4"
+                        type="video/mp4"
+                        />
+                        Your browser does not support the video tag.
+                    </video>
+                    </div>
+                    <p class="testimonial-one__text" style="margin-top: 20px;">
+                    Michael shares how Team Flexx helped him transition from
+                    casual trader to full-time investor, all while minimizing risk.
+                    </p>
+                    <div class="testimonial-one__quote">
+                    <span class="icon-quote"></span>
+                    </div>
+                </div>
+                </div>
+        
+                <div class="col-xl-6 col-lg-6 col-md-6">
+                <div class="testimonial-one__single testimonial-one__video-card">
+                    <div class="testimonial-one__client-info-and-review">
+                    <div class="testimonial-one__client-info">
+                        <div class="testimonial-one__client-img">
+                        <img
+                            src="assets/images/testimonial/testimonial-one-client-1-2.jpg"
+                            alt=""
+                        />
+                        </div>
+                        <div class="testimonial-one__client-content">
+                        <h4 class="testimonial-one__client-name">
+                            <a href="#">Amanda Lee</a>
+                        </h4>
+                        <p class="testimonial-one__sub-title">
+                            "Entrepreneur / Content Creator"
+                        </p>
+                        </div>
+                    </div>
+                    </div>
+                    <div class="testimonial-one__video-aspect-ratio">
+                    <video
+                        class="testimonial-one__video"
+                        controls
+                        poster="assets/images/testimonial/video-poster.jpg"
+                    >
+                        <source
+                        src="assets/vids/testimonials/vid-testimonials-1.mp4"
+                        type="video/mp4"
+                        />
+                        Your browser does not support the video tag.
+                    </video>
+                    </div>
+                    <p class="testimonial-one__text" style="margin-top: 20px;">
+                    Amanda talks about the user-friendly digital tools offered by
+                    Team Flexx and how they’ve simplified her daily trading routine.
+                    </p>
+                    <div class="testimonial-one__quote">
+                    <span class="icon-quote"></span>
+                    </div>
+                </div>
+                </div>
+        
+            </div>
             </div>
         </section>
         <!--Testimonial Page End-->
@@ -802,13 +677,9 @@
                                 <p class="event-direction__text">As we continue to build, mentor, and train our community, we keep hitting higher and higher milestones that sets and keeps our standards high!</p>
                                 <div class="event-direction__call">
                                     <!-- TODO: Can be repleaced with zigzag arrow up icons -->
-                                    <!-- <div class="event-direction__call-icon">
-                                        <img src="assets/images/icon/event-direction-chat-icon.png" alt="">
-                                    </div> -->
-                                    <!-- <div class="event-direction__call-content">
-                                        <p>Call Us</p>
-                                        <h4><a href="tel:3075550133">(307) 555-0133</a></h4>
-                                    </div> -->
+                                    <div class="event-direction__call-icon">
+                                        <img src="assets/images/logos/white-cropped-resized.png" alt="">
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -861,156 +732,84 @@
         <!-- Event Direction End -->
 
         <!-- Gallery One Start -->
-        <section class="gallery-one">
+        <section class="gallery-one" id="events">
             <div class="container">
-                <div class="section-title text-center">
-                    <div class="section-title__tagline-box">
-                        <span class="section-title__tagline">Events Gallery</span>
-                    </div>
-                    <h2 class="section-title__title">Snapshots of Success: <br> Moments from Our Journey</h2>
+              <div class="section-title text-center">
+                <div class="section-title__tagline-box">
+                  <span class="section-title__tagline">Events Gallery</span>
                 </div>
-                <div class="row masonary-layout">
-                    <div class="col-xl-3 col-lg-6 col-md-6">
-                        <div class="gallery-one__single">
-                            <div class="gallery-one__img">
-                                <img src="assets/images/gallery/gallery-1-1.jpg" alt="">
-                                <div class="gallery-one__content">
-                                    <div class="gallery-one__sub-title-box">
-                                        <div class="gallery-one__sub-title-shape"></div>
-                                        <p class="gallery-one__sub-title">Gala Affairs</p>
-                                    </div>
-                                    <h4 class="gallery-one__title"><a href="gallery-details.html">Dream Makers Event
-                                            Planning</a></h4>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-3 col-lg-6 col-md-6">
-                        <div class="gallery-one__single">
-                            <div class="gallery-one__img">
-                                <img src="assets/images/gallery/gallery-1-2.jpg" alt="">
-                                <div class="gallery-one__content">
-                                    <div class="gallery-one__sub-title-box">
-                                        <div class="gallery-one__sub-title-shape"></div>
-                                        <p class="gallery-one__sub-title">Gala Affairs</p>
-                                    </div>
-                                    <h4 class="gallery-one__title"><a href="gallery-details.html">Dream Makers Event
-                                            Planning</a></h4>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-3 col-lg-6 col-md-6">
-                        <div class="gallery-one__single">
-                            <div class="gallery-one__img">
-                                <img src="assets/images/gallery/gallery-1-3.jpg" alt="">
-                                <div class="gallery-one__content">
-                                    <div class="gallery-one__sub-title-box">
-                                        <div class="gallery-one__sub-title-shape"></div>
-                                        <p class="gallery-one__sub-title">Gala Affairs</p>
-                                    </div>
-                                    <h4 class="gallery-one__title"><a href="gallery-details.html">Dream Makers Event
-                                            Planning</a></h4>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-3 col-lg-6 col-md-6">
-                        <div class="gallery-one__single">
-                            <div class="gallery-one__img">
-                                <img src="assets/images/gallery/gallery-1-4.jpg" alt="">
-                                <div class="gallery-one__content">
-                                    <div class="gallery-one__sub-title-box">
-                                        <div class="gallery-one__sub-title-shape"></div>
-                                        <p class="gallery-one__sub-title">Gala Affairs</p>
-                                    </div>
-                                    <h4 class="gallery-one__title"><a href="gallery-details.html">Dream Makers Event
-                                            Planning</a></h4>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-3 col-lg-6 col-md-6">
-                        <div class="gallery-one__single">
-                            <div class="gallery-one__img">
-                                <img src="assets/images/gallery/gallery-1-5.jpg" alt="">
-                                <div class="gallery-one__content">
-                                    <div class="gallery-one__sub-title-box">
-                                        <div class="gallery-one__sub-title-shape"></div>
-                                        <p class="gallery-one__sub-title">Gala Affairs</p>
-                                    </div>
-                                    <h4 class="gallery-one__title"><a href="gallery-details.html">Dream Makers Event
-                                            Planning</a></h4>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-3 col-lg-6 col-md-6">
-                        <div class="gallery-one__single">
-                            <div class="gallery-one__img">
-                                <img src="assets/images/gallery/gallery-1-6.jpg" alt="">
-                                <div class="gallery-one__content">
-                                    <div class="gallery-one__sub-title-box">
-                                        <div class="gallery-one__sub-title-shape"></div>
-                                        <p class="gallery-one__sub-title">Gala Affairs</p>
-                                    </div>
-                                    <h4 class="gallery-one__title"><a href="gallery-details.html">Dream Makers Event
-                                            Planning</a></h4>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-3 col-lg-6 col-md-6">
-                        <div class="gallery-one__single">
-                            <div class="gallery-one__img">
-                                <img src="assets/images/gallery/gallery-1-7.jpg" alt="">
-                                <div class="gallery-one__content">
-                                    <div class="gallery-one__sub-title-box">
-                                        <div class="gallery-one__sub-title-shape"></div>
-                                        <p class="gallery-one__sub-title">Gala Affairs</p>
-                                    </div>
-                                    <h4 class="gallery-one__title"><a href="gallery-details.html">Dream Makers Event
-                                            Planning</a></h4>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-6 col-lg-6 col-md-6">
-                        <div class="gallery-one__single">
-                            <div class="gallery-one__img">
-                                <img src="assets/images/gallery/gallery-1-8.jpg" alt="">
-                                <div class="gallery-one__content">
-                                    <div class="gallery-one__sub-title-box">
-                                        <div class="gallery-one__sub-title-shape"></div>
-                                        <p class="gallery-one__sub-title">Gala Affairs</p>
-                                    </div>
-                                    <h4 class="gallery-one__title"><a href="gallery-details.html">Dream Makers Event
-                                            Planning</a></h4>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-3 col-lg-6 col-md-6">
-                        <div class="gallery-one__single">
-                            <div class="gallery-one__img">
-                                <img src="assets/images/gallery/gallery-1-9.jpg" alt="">
-                                <div class="gallery-one__content">
-                                    <div class="gallery-one__sub-title-box">
-                                        <div class="gallery-one__sub-title-shape"></div>
-                                        <p class="gallery-one__sub-title">Gala Affairs</p>
-                                    </div>
-                                    <h4 class="gallery-one__title"><a href="gallery-details.html">Dream Makers Event
-                                            Planning</a></h4>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                <h2 class="section-title__title">Snapshots of Success: <br> Moments from Our Journey</h2>
+              </div>
+          
+              <!-- Album View -->
+              <div id="album-view" class="album-view">
+                <!-- Album 1 -->
+                <div class="album-card" onclick="expandAlbum('event1')">
+                  <div class="carousel">
+                    <img
+                      src="assets/images/gallery/gallery-1-1.jpg"
+                      alt="Event 1"
+                      class="album-thumbnail"
+                    />
+                    <img
+                      src="assets/images/gallery/gallery-1-2.jpg"
+                      alt="Event 1"
+                      class="album-thumbnail"
+                    />
+                    <img
+                      src="assets/images/gallery/gallery-1-3.jpg"
+                      alt="Event 1"
+                      class="album-thumbnail"
+                    />
+                  </div>
+                  <div class="album-title">Event 1</div>
                 </div>
+          
+                <!-- Album 2 -->
+                <div class="album-card" onclick="expandAlbum('event2')">
+                  <div class="carousel">
+                    <img
+                      src="assets/images/gallery/gallery-1-4.jpg"
+                      alt="Event 2"
+                      class="album-thumbnail"
+                    />
+                    <img
+                      src="assets/images/gallery/gallery-1-5.jpg"
+                      alt="Event 2"
+                      class="album-thumbnail"
+                    />
+                    <img
+                      src="assets/images/gallery/gallery-1-6.jpg"
+                      alt="Event 2"
+                      class="album-thumbnail"
+                    />
+                  </div>
+                  <div class="album-title">Event 2</div>
+                </div>
+              </div>
+          
+              <!-- Expanded View -->
+              <div id="expanded-view" class="expanded-view" style="display: none;">
+                <!-- Container for dynamically loaded images -->
+                <div id="photo-container" class="photo-container"></div>
+          
+                <div class="back-button-wrapper">
+                  <a href="javascript:void(0);" class="main-slider__btn thm-btn" onclick="closeExpandedView()">
+                    <span class="icon-arrow-left"></span>
+                    Back to Albums
+                  </a>
+                </div>
+              </div>
             </div>
-        </section>
-        <!-- Gallery One End -->
-
-
+          </section>
+          
+        <!-- Image Modal -->
+        <div id="image-modal" class="image-modal">
+        <span class="close-modal" onclick="closeModal()">&times;</span>
+        <img class="modal-content" id="modal-image" />
+        </div>
+          
+          
         <!--Brand One Start-->
         <section class="brand-one">
             <div class="container">
@@ -1110,8 +909,6 @@
             </div>
         </section>
         <!--Brand One End-->
-
-
         <!--CTA One Start-->
         <section class="cta-one">
             <div class="container">
@@ -1130,9 +927,6 @@
 
         <!--Site Footer Start-->
         <footer class="site-footer">
-            <div class="site-footer__shape-1 float-bob-y">
-                <img src="assets/images/shapes/site-footer-shape-1.png" alt="">
-            </div>
             <div class="site-footer__top">
                 <div class="container">
                     <div class="site-footer__top-inner">
@@ -1186,20 +980,6 @@
                                     </ul>
                                 </div>
                             </div>
-                            <!-- <div class="col-xl-3 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="300ms">
-                                <div class="footer-widget__column footer-widget__our-company">
-                                    <div class="footer-widget__title-box">
-                                        <h3 class="footer-widget__title">Our Company</h3>
-                                    </div>
-                                    <ul class="footer-widget__link-list list-unstyled">
-                                        <li><a href="schedule-list-2.html">Jubilee Events</a></li>
-                                        <li><a href="about.html">Gala Affairs</a></li>
-                                        <li><a href="about.html">Inspire and Delight Events</a></li>
-                                        <li><a href="about.html">Enchanted Gatherings</a></li>
-                                        <li><a href="about.html">Eventful Ventures</a></li>
-                                    </ul>
-                                </div>
-                            </div> -->
                             <div class="col-xl-4 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="400ms">
                                 <div class="footer-widget__column footer-widget__contact">
                                     <div class="footer-widget__title-box">
@@ -1243,19 +1023,12 @@
             <div class="site-footer__bottom">
                 <div class="container">
                     <div class="site-footer__bottom-inner">
-                        <p class="site-footer__bottom-text">© TeamFlexx 2024 | All Rights Reserved</p>
-                        <!-- <ul class="list-unstyled site-footer__bottom-menu">
-                            <li><a href="about.html">Trams & Condition</a></li>
-                            <li><a href="about.html">Privacy Policy</a></li>
-                            <li><a href="about.html">Contact Us</a></li>
-                        </ul> -->
+                        <p class="site-footer__bottom-text">© TeamFlexx 2025 | All Rights Reserved</p>
                     </div>
                 </div>
             </div>
         </footer>
         <!--Site Footer End-->
-
-
     </div><!-- /.page-wrapper -->
 
 
@@ -1266,7 +1039,7 @@
             <span class="mobile-nav__close mobile-nav__toggler"><i class="fa fa-times"></i></span>
 
             <div class="logo-box">
-                <a href="index.html" aria-label="logo image"><img src="assets/images/resources/logo-1.png" width="150"
+                <a href="index.html" aria-label="logo image"><img src="assets/images/logos/white-cropped-resized.png" width="150"
                         alt="" /></a>
             </div>
             <!-- /.logo-box -->
@@ -1276,7 +1049,7 @@
             <ul class="mobile-nav__contact list-unstyled">
                 <li>
                     <i class="fa fa-envelope"></i>
-                    <a href="mailto:needhelp@packageName__.com">needhelp@eventflow.com</a>
+                    <a href="mailto:needhelp@packageName__.com">needhelp@teamflexx.com</a>
                 </li>
                 <li>
                     <i class="fa fa-phone-alt"></i>
@@ -1292,26 +1065,10 @@
                 </div><!-- /.mobile-nav__social -->
             </div><!-- /.mobile-nav__top -->
 
-
-
         </div>
         <!-- /.mobile-nav__content -->
     </div>
     <!-- /.mobile-nav__wrapper -->
-
-    <!-- <div class="search-popup">
-        <div class="search-popup__overlay search-toggler"></div>
-        <div class="search-popup__content">
-            <form action="#">
-                <label for="search" class="sr-only">search here</label>
-                <input type="text" id="search" placeholder="Search Here..." />
-                <button type="submit" aria-label="search submit" class="thm-btn">
-                    <i class="fas fa-search"></i>
-                </button>
-            </form>
-        </div>
-    </div> -->
-    <!-- /.search-popup -->
 
     <a href="#" data-target="html" class="scroll-to-target scroll-to-top"><i class="fas fa-arrow-up"></i></a>
 
@@ -1335,7 +1092,49 @@
     <script src="assets/vendors/countdown/countdown.min.js"></script>
     <script src="assets/vendors/marque/marquee.min.js"></script>
     <script src="assets/vendors/sidebar-content/jquery-sidebar-content.js"></script>
-    
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+          const container = document.querySelector(".rellax-container");
+          const barCount = 15; // Increase for more bars
+          const rellaxSpeedRange = [-2, 2]; // Bar speeds between -2 and 2
+      
+          for (let i = 0; i < barCount; i++) {
+            // Create bar div
+            const bar = document.createElement("div");
+            bar.classList.add("bar");
+      
+            // Random color: red or green
+            const isRed = Math.random() < 0.5;
+            bar.style.backgroundColor = isRed ? "#f44336" : "#4caf50";
+      
+            // Random height (e.g. 100-400px)
+            const height = Math.floor(Math.random() * 300) + 100;
+            bar.style.height = height + "px";
+      
+            // Random rotation (e.g. -45deg to 45deg)
+            const angle = (Math.random() * 90) - 45;
+            bar.style.transform = `rotate(${angle}deg)`;
+      
+            // Random position within viewport
+            const topPos = Math.floor(Math.random() * 100);
+            const leftPos = Math.floor(Math.random() * 100);
+            bar.style.top = topPos + "vh";
+            bar.style.left = leftPos + "vw";
+      
+            // Random parallax speed
+            const speed = (Math.random() * (rellaxSpeedRange[1] - rellaxSpeedRange[0])) + rellaxSpeedRange[0];
+            // e.g.  -2.0 <= speed < 2.0
+            bar.setAttribute("data-rellax-speed", speed.toFixed(1));
+      
+            // Append bar to container
+            container.appendChild(bar);
+          }
+      
+          // Initialize Rellax on the .bar elements
+          new Rellax(".bar");
+        });
+      </script>
+      
     <script>
         document.addEventListener("DOMContentLoaded", () => {
             const video = document.querySelector('.event-one__video-box video');
@@ -1354,11 +1153,70 @@
             
             observer.observe(video);
         });
+        const albums = {
+            event1: [
+                'assets/images/gallery/gallery-1-1.jpg',
+                'assets/images/gallery/gallery-1-2.jpg',
+                'assets/images/gallery/gallery-1-3.jpg'
+            ],
+            event2: [
+                'assets/images/gallery/gallery-1-4.jpg',
+                'assets/images/gallery/gallery-1-5.jpg',
+                'assets/images/gallery/gallery-1-6.jpg'
+            ]
+            };
+
+            function expandAlbum(albumName) {
+            const expandedView = document.getElementById('expanded-view');
+            const photoContainer = document.getElementById('photo-container');
+
+            // Generate photo cards for the selected album
+            let photoCards = '';
+            albums[albumName].forEach((image) => {
+                photoCards += `
+                <div class="photo-card" onclick="viewImage('${image}')">
+                    <img src="${image}" alt="${albumName}" />
+                </div>
+                `;
+            });
+
+            // Inject photo cards into the container
+            photoContainer.innerHTML = photoCards;
+
+            // Show expanded view, hide album view
+            expandedView.style.display = 'flex';
+            document.getElementById('album-view').style.display = 'none';
+            }
+
+            function closeExpandedView() {
+            // Hide expanded view
+            document.getElementById('expanded-view').style.display = 'none';
+            // Show album view
+            document.getElementById('album-view').style.display = 'flex';
+
+            // Clear out the photo container if desired
+            document.getElementById('photo-container').innerHTML = '';
+            }
+
+            function viewImage(imageSrc) {
+            const modal = document.getElementById('image-modal');
+            const modalImage = document.getElementById('modal-image');
+
+            modalImage.src = imageSrc;
+            modal.style.display = 'flex';
+            // Disable body scroll behind the modal
+            document.body.style.overflow = 'hidden';
+            }
+
+            function closeModal() {
+            const modal = document.getElementById('image-modal');
+            modal.style.display = 'none';
+            // Re-enable body scroll
+            document.body.style.overflow = 'auto';
+            }
+
+
     </script>
-
-
-
-
     <!-- template js -->
     <script src="assets/js/eventflow.js"></script>
 </body>

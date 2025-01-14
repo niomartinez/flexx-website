@@ -293,7 +293,7 @@ body.overlay-open {
 
   .phase-3__wrapper {
     @media (min-width: 768px) {
-      gap: 8rem;
+      gap: 2rem;
     }
   }
 

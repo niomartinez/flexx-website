@@ -61,7 +61,7 @@ body {
 }
 
 .body-bg-color-1 {
-  background-color: #171618;
+  background-color: #1E1B22;
 }
 
 .body-bg-color-2 {
@@ -72,6 +72,33 @@ body {
 body.locked {
   overflow: hidden;
 }
+
+/* 
+   1) .rellax-container takes up the entire viewport 
+      and sits behind everything else (z-index).
+   2) .bar has random color/rotation/height from JS.
+*/
+.rellax-container {
+  position: fixed;        /* so it stays put and bars can parallax */
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 0;             /* behind your main content, which should have z-index: 1 or auto */
+  pointer-events: none;   /* so it doesn’t block clicks */
+  overflow: hidden;       /* ensure bars don’t create scrollbars */
+}
+
+/* The “bar” class that JS will generate */
+.bar {
+  position: absolute;
+  width: 50px;             /* bar thickness */
+  background-color: red;  /* temporarily, but we’ll randomize in JS */
+  opacity: 0.3;           /* make them semi-transparent */
+  filter: blur(2px);      /* optional blur if you want them “soft” */
+  transform-origin: center;
+}
+
 
 a {
   color: var(--eventflow-base);
@@ -386,7 +413,7 @@ ul {
   animation-duration: 2s;
   -webkit-animation-iteration-count: infinite;
   animation-iteration-count: infinite;
-  background-image: url(../images/loader.png);
+  background-image: url(../images/logos/white-cropped.png);
   background-repeat: no-repeat;
   background-position: center center;
   background-size: 60px auto;
@@ -659,7 +686,7 @@ ul {
 }
 
 .main-menu__wrapper-inner {
-  background: rgb(var(--eventflow-black-rgb), 0.9);
+  background: #1E1B22;
   position: relative;
   display: flex;
   align-items: center;
@@ -775,7 +802,6 @@ ul {
 
 /* Dropdown styling */
 .main-menu__list .dropdown > a::after {
-  content: "▼"; /* Adds a dropdown arrow icon */
   margin-left: 5px;
   font-size: 12px;
 }
@@ -1108,7 +1134,7 @@ ul {
   top: 0;
   left: 0;
   width: 100vw;
-  height: 90vh;
+  height: 100vh;
   z-index: 999;
   -webkit-transform: translateX(-100%);
   transform: translateX(-100%);
@@ -1809,7 +1835,7 @@ ul {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  font-size: 18px;
+  font-size: 30px;
   line-height: 18px;
   font-weight: 500;
   letter-spacing: 1.2px;
@@ -1843,11 +1869,11 @@ ul {
 
 .main-slider__title {
   position: relative;
-  font-size: 60px;
+  font-size: 120px;
   color: var(--flexx-orange);
   font-weight: 700;
   text-transform: uppercase;
-  line-height: 75px;
+  line-height: 120px;
   margin-top: 7px;
   margin-bottom: 18px;
   opacity: 0;
@@ -1885,6 +1911,7 @@ ul {
   display: block;
   color: var(--flexx-dirtywhite);
   opacity: 0;
+  font-size: 50px;
   -webkit-transform: perspective(400px) rotateY(0deg) translateX(-120px);
   -ms-transform: perspective(400px) rotateY(0deg) translateX(-120px);
   transform: perspective(400px) rotateY(0deg) translateX(-120px);
@@ -1903,7 +1930,8 @@ ul {
   -webkit-transform: perspective(400px) rotateY(0deg) translateX(0px);
   -ms-transform: perspective(400px) rotateY(0deg) translateX(0px);
   transform: perspective(400px) rotateY(0deg) translateX(0px);
-  font-size: 30px;
+  font-size: 50px;
+  line-height: 50px;
   -webkit-transition-delay: 1500ms;
   -moz-transition-delay: 1500ms;
   -ms-transition-delay: 1500ms;
@@ -2709,7 +2737,7 @@ ul {
 
 .event-one__inner {
   position: relative;
-  background: #050208;
+  background: #0E0A17;
   display: block;
   border: 2px solid rgba(var(--eventflow-bdr-color-rgb), .20);
   border-radius: 20px;
@@ -3063,14 +3091,16 @@ ul {
   display: block;
   z-index: 1;
   color: var(--flexx-dirtywhite);
+  opacity: 0.8;
 }
 
 .event-direction__inner {
   position: relative;
   display: block;
-  background-color: #050208;
+  background-color: #0E0A17;
   padding: 100px 60px 70px;
   border-radius: 20px;
+  margin-top: 50px;
 }
 
 .event-direction__left {
@@ -3187,125 +3217,262 @@ ul {
   line-height: 16px;
 }
 
-/*--------------------------------------------------------------
-# Gallery One
---------------------------------------------------------------*/
-.gallery-one {
+  /*--------------------------------------------------------------
+  # Gallery One
+  --------------------------------------------------------------*/
+  /*********************************
+  Album & Expanded View Layout
+**********************************/
+.album-view, .expanded-view {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  justify-content: center;
   position: relative;
-  display: block;
-  padding: 120px 0 110px;
-  z-index: 1;
+  margin-bottom: 30px; /* optional to add spacing at bottom */
 }
 
-.gallery-one .container {
-  max-width: 1572px;
+.photo-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  justify-content: center;
+  width: 100%;
 }
 
-.gallery-one .row {
-  --bs-gutter-x: 10px;
-}
-
-.gallery-one__single {
-  position: relative;
-  display: block;
-  margin-bottom: 10px;
-}
-
-.gallery-one__img {
-  position: relative;
-  display: block;
+/*********************************
+  Album Cards
+**********************************/
+.album-card {
+  width: 300px;
+  border-radius: 15px;
   overflow: hidden;
-  border-radius: 20px;
-  z-index: 1;
+  position: relative;
+  cursor: pointer;
+  transition: transform 0.3s;
+  background-color: #f5f5f5;
+  margin-bottom: 20px;
 }
 
-.gallery-one__img::before {
+.album-card:hover {
+  transform: scale(1.05);
+}
+
+/*********************************
+  Carousel
+**********************************/
+.carousel {
+  height: 200px;
+  position: relative;
+  overflow: hidden;
+}
+
+.carousel img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
   position: absolute;
-  content: '';
+  animation: slide 9s infinite;
+}
+
+@keyframes slide {
+  0%, 33% {
+    transform: translateX(0);
+  }
+  34%, 66% {
+    transform: translateX(-100%);
+  }
+  67%, 100% {
+    transform: translateX(-200%);
+  }
+}
+
+/*********************************
+  Titles
+**********************************/
+.album-title {
+  padding: 10px;
+  text-align: center;
+  background: #0E0A17;
+  color: var(--flexx-dirtywhite);
+  font-size: 18px;
+}
+
+.photo-card {
+  width: 200px;
+  border-radius: 15px;
+  overflow: hidden;
+  position: relative;
+  cursor: pointer;
+  transition: transform 0.3s;
+  margin-bottom: 20px;
+}
+
+.photo-card img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.photo-card:hover {
+  transform: scale(1.05);
+}
+
+/*********************************
+  Back Button Wrapper
+**********************************/
+.back-button-wrapper {
+  width: 100%;
+  text-align: center;
+  margin-top: 20px;
+}
+
+/*********************************
+  Modal
+**********************************/
+.image-modal {
+  display: none;
+  position: fixed;
+  z-index: 9999; /* Make sure this is high */
   top: 0;
   left: 0;
-  right: 0;
-  bottom: 0;
-  background: var(--eventflow-black);
-  opacity: 0;
-  transition: background-color 0.5s ease;
-  transition: all 0.5s ease;
-  z-index: 1;
-}
-
-.gallery-one__single:hover .gallery-one__img::before {
-  opacity: .40;
-}
-
-.gallery-one__img img {
   width: 100%;
-  border-radius: 20px;
-  transform: scale3d(1, 1, 1);
-  transition: transform 1s ease-in-out;
-}
-
-.gallery-one__single:hover .gallery-one__img img {
-  transform: scale(1.05) rotate(0deg);
-}
-
-.gallery-one__content {
-  position: absolute;
-  bottom: 10px;
-  left: 10px;
-  right: 10px;
-  background-color: #0E0A17;
-  border-radius: 20px;
-  padding: 26px 30px 18px;
-  transform: translateX(-50%);
-  transition: opacity 500ms ease, visibility 500ms ease, transform 500ms ease;
-  visibility: hidden;
-  opacity: 0;
-  z-index: 2;
-}
-
-.gallery-one__single:hover .gallery-one__content {
-  transform: translateX(0%);
-  visibility: visible;
-  opacity: 1;
-  transition-delay: 500ms;
-}
-
-.gallery-one__sub-title-box {
-  position: relative;
-  display: flex;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  justify-content: center;
   align-items: center;
-  gap: 10px;
-  margin-bottom: 15px;
 }
 
-.gallery-one__sub-title-shape {
-  position: relative;
-  display: block;
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  background: linear-gradient(90deg, #504f55 0%, #f9ad42 100%);
+.modal-content {
+  max-width: 80%;
+  max-height: 80%;
 }
 
-.gallery-one__sub-title {
-  font-size: 16px;
-  line-height: 16px;
-  color: var(--flexx-orange);
+.close-modal {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  font-size: 30px;
+  color: white;
+  cursor: pointer;
 }
 
-.gallery-one__title {
-  font-size: 24px;
-  font-weight: 700;
-  line-height: 34px;
-}
+  .gallery-one {
+    position: relative;
+    display: block;
+    padding: 120px 0 110px;
+    z-index: 1;
+  }
 
-.gallery-one__title a {
-  color: var(--flexx-orange);
-}
+  .gallery-one .container {
+    max-width: 1572px;
+  }
 
-.gallery-one__title a:hover {
-  color: var(--eventflow-base);
-}
+  .gallery-one .row {
+    --bs-gutter-x: 10px;
+  }
+
+  .gallery-one__single {
+    position: relative;
+    display: block;
+    margin-bottom: 10px;
+  }
+
+  .gallery-one__img {
+    position: relative;
+    display: block;
+    overflow: hidden;
+    border-radius: 20px;
+    z-index: 1;
+  }
+
+  .gallery-one__img::before {
+    position: absolute;
+    content: '';
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: var(--eventflow-black);
+    opacity: 0;
+    transition: background-color 0.5s ease;
+    transition: all 0.5s ease;
+    z-index: 1;
+  }
+
+  .gallery-one__single:hover .gallery-one__img::before {
+    opacity: .40;
+  }
+
+  .gallery-one__img img {
+    width: 100%;
+    border-radius: 20px;
+    transform: scale3d(1, 1, 1);
+    transition: transform 1s ease-in-out;
+  }
+
+  .gallery-one__single:hover .gallery-one__img img {
+    transform: scale(1.05) rotate(0deg);
+  }
+
+  .gallery-one__content {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    right: 10px;
+    background-color: #0E0A17;
+    border-radius: 20px;
+    padding: 26px 30px 18px;
+    transform: translateX(-50%);
+    transition: opacity 500ms ease, visibility 500ms ease, transform 500ms ease;
+    visibility: hidden;
+    opacity: 0;
+    z-index: 2;
+  }
+
+  .gallery-one__single:hover .gallery-one__content {
+    transform: translateX(0%);
+    visibility: visible;
+    opacity: 1;
+    transition-delay: 500ms;
+  }
+
+  .gallery-one__sub-title-box {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 15px;
+  }
+
+  .gallery-one__sub-title-shape {
+    position: relative;
+    display: block;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: linear-gradient(90deg, #504f55 0%, #f9ad42 100%);
+  }
+
+  .gallery-one__sub-title {
+    font-size: 16px;
+    line-height: 16px;
+    color: var(--flexx-orange);
+  }
+
+  .gallery-one__title {
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 34px;
+  }
+
+  .gallery-one__title a {
+    color: var(--flexx-orange);
+  }
+
+  .gallery-one__title a:hover {
+    color: var(--eventflow-base);
+  }
 
 /*--------------------------------------------------------------
 # Schedule One
@@ -5447,13 +5614,35 @@ ul {
 /*--------------------------------------------------------------
 # Testimonial One
 --------------------------------------------------------------*/
+/* Section Wrapper */
 .testimonial-one {
   position: relative;
-  display: block;
-  background-color: var(--eventflow-black);
+  z-index: 0; /* Establish stacking context */
   padding: 120px 0 340px;
-  z-index: 1;
 }
+
+/* Semi-Transparent Background */
+.testimonial-one::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #0E0A17; /* Adjust to your preferred background color */
+  opacity: 0.8; /* Transparency for the background */
+  z-index: -1; /* Ensure it stays behind content */
+  pointer-events: none; /* Prevent it from blocking interactions */
+}
+
+/* Content inside the section remains fully opaque */
+.testimonial-one .container {
+  position: relative;
+  z-index: 1; /* Content is above the background */
+  opacity: 1; /* Ensure content stays fully visible */
+}
+
+
 
 .testimonial-one .section-title__title--two {
   color: var(--flexx-orange);
@@ -5672,6 +5861,44 @@ ul {
   opacity: 1;
   visibility: visible;
 }
+
+/* 
+|--------------------------------------------------------------
+| For portrait video ratio in testimonials
+|--------------------------------------------------------------
+*/
+/* Optional: Ensure videos/images are explicitly fully opaque */
+.testimonial-one video,
+.testimonial-one img {
+  opacity: 1 !important; /* Override any potential inherited opacity */
+  position: relative; /* To stay unaffected by pseudo-elements */
+  z-index: 2; /* Ensure they are above the pseudo-element */
+}
+
+.testimonial-one__video-card .testimonial-one__video-aspect-ratio {
+  position: relative;
+  width: 100%;
+  /* 9:16 ratio => 16/9=1.777..., so for portrait it's 9/16=0.5625 => 56.25%. 
+     But because it's portrait, invert that => 16/9 ~ 177.78%. */
+  padding-bottom: 177.78%;
+  border-radius: 20px;
+  overflow: hidden;
+  margin-top: 20px; /* space above the video if desired */
+  background-color: #000; /* fallback background */
+}
+
+/* The video fills that container */
+.testimonial-one__video-card .testimonial-one__video-aspect-ratio video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* or 'contain' if you'd rather show letterbox bars */
+  border-radius: 20px;
+  opacity: 1;
+}
+
 
 /*--------------------------------------------------------------
 # Video One

@@ -1853,7 +1853,7 @@
 
 
 
-@media only screen and (max-width: 767px) {
+@media only screen and (max-width: 768px) {
     .main-slider__img {
         display: none;
     }
@@ -1876,10 +1876,14 @@
         padding-top: 120px;
         padding-bottom: 24px;
     }
+    .main-slider .swiper-slide-active .main-slider__text {
+        font-size: 30px;
+        line-height: 30px;
+      }
 
     .main-slider__title {
-        font-size: 30px;
-        line-height: 40px;
+        font-size: 60px;
+        line-height: 60px;
     }
 
     .main-slider__text br {
