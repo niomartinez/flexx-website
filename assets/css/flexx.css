@@ -3251,6 +3251,7 @@ ul {
   margin-bottom: 20px;
   display: flex;
   flex-direction: column;
+  height: 200px;
   /* Keep or remove 'cursor: pointer' depending on how you want the card to behave */
   cursor: pointer;
   transition: transform 0.3s;
