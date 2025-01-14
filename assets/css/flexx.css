@@ -3291,8 +3291,8 @@ ul {
 /* Now we shift .carousel-inner left in 3 steps */
 @keyframes slide {
   0%, 33%   { transform: translateX(0);      }
-  34%, 66%  { transform: translateX(-100%); }
-  67%, 100% { transform: translateX(-200%); }
+  34%, 66%  { transform: translateX(-33.3%); }
+  67%, 100% { transform: translateX(-66.6%); }
 }
 
 
